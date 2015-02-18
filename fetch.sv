@@ -14,9 +14,8 @@ initial begin
 	pc <= 0;
 end
 
-always_ff @ (posedge clk)
+always_comb
 begin
-
 	if(start_i == 1)
 		pc <= start_address_i;	
 	else begin
@@ -25,7 +24,10 @@ begin
 		else
 			pc <= pc + 1;
 	end
-	
+end
+
+always_ff @ (posedge clk)
+begin
 	next <= pc;
 end
 	
