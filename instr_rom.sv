@@ -36,7 +36,7 @@ module instr_rom
 	reg [7:0] instr;
 	reg [2:0] r1i, r2i, ro;
 
-	always_ff @ (posedge pc) begin
+	always_comb begin
 		// Switch on opcode to determine format
 		case (instr[7:4])
 			LB_OP   : form = M_FORM;
@@ -70,23 +70,23 @@ module instr_rom
 			I_FORM: begin
 				r1i = instr[3:1];
 				r2i = r1i + 8; 	// Get seq. reg.
-				ro = r1i;
+				ro  = r1i;
 			end
 			M_FORM: begin
 				r1i = {1'b0, instr[3:2]};
 				r2i = r1i + 8;
-				ro = {1'b1, instr[1:0]};
+				ro  = {1'b1, instr[1:0]};
 			end
 			default: begin end
 		endcase
 	end
 
-	assign format = form;
-	assign opcode = instr[7:4];
-	assign reg1_i = r1i;
-	assign reg2_i = r2i;
-	assign reg_o = ro;
-	assign imm = instr[3:1];
+	assign format   = form;
+	assign opcode   = instr[7:4];
+	assign reg1_i   = r1i;
+	assign reg2_i   = r2i;
+	assign reg_o    = ro;
+	assign imm 	    = instr[3:1];
 	assign imm_flag = instr[0];
 
 endmodule
