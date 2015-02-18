@@ -66,7 +66,7 @@ module instr_rom
 
 		// Registers
 		case (form)
-			C_FORM: ro = (instr[0] == 0) ? 010 : 011;
+			C_FORM: ro = (instr[0] == 0) ? 3'b010 : 3'b011;
 			I_FORM: begin
 				r1i = instr[3:1];
 				r2i = r1i + 8; 	// Get seq. reg.
