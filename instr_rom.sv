@@ -29,7 +29,7 @@ module instr_rom
 		output wire [3:0] opcode,
 		output wire [2:0] reg1_i, reg2_i, reg_o,
 		output wire [2:0] imm,
-		output wire imm_flag,
+		output wire imm_flag
 	);
 
 	reg [1:0] form;
@@ -39,22 +39,22 @@ module instr_rom
 	always_comb begin
 		// Switch on opcode to determine format
 		case (instr[7:4])
-			LB_OP   : form = M_FORM;
-			LHB_OP  : form = M_FORM;
-			JMP_OP  : form = C_FORM;
-			STR_OP  : form = M_FORM;
-			LIM_OP  : form = C_FORM;
-			MVB_OP  : form = M_FORM;
-			MVF_OP  : form = M_FORM;
-			ADD_OP  : form = M_FORM;
-			SUB_OP  : form = M_FORM;
-			SFT_OP  : form = I_FORM;
-			BNE_OP  : form = M_FORM;
-			BEQ_OP  : form = M_FORM;
-			BLT_OP  : form = M_FORM;
-			INC_OP  : form = I_FORM;
-			HALT_OP : form = X_FORM;
-			TBA_OP  : form = X_FORM;
+			`LB_OP   : form = `M_FORM;
+			`LHB_OP  : form = `M_FORM;
+			`JMP_OP  : form = `C_FORM;
+			`STR_OP  : form = `M_FORM;
+			`LIM_OP  : form = `C_FORM;
+			`MVB_OP  : form = `M_FORM;
+			`MVF_OP  : form = `M_FORM;
+			`ADD_OP  : form = `M_FORM;
+			`SUB_OP  : form = `M_FORM;
+			`SFT_OP  : form = `I_FORM;
+			`BNE_OP  : form = `M_FORM;
+			`BEQ_OP  : form = `M_FORM;
+			`BLT_OP  : form = `M_FORM;
+			`INC_OP  : form = `I_FORM;
+			`HALT_OP : form = `X_FORM;
+			`TBA_OP  : form = `X_FORM;
 		endcase
 
 		// Instructions go here
@@ -76,13 +76,13 @@ module instr_rom
 
 		// Registers
 		case (form)
-			C_FORM: ro = (instr[0] == 0) ? 3'b010 : 3'b011;
-			I_FORM: begin
+			`C_FORM: ro = (instr[0] == 0) ? 3'b010 : 3'b011;
+			`I_FORM: begin
 				r1i = instr[3:1];
 				r2i = r1i + 8; 	// Get seq. reg.
 				ro  = r1i;
 			end
-			M_FORM: begin
+			`M_FORM: begin
 				r1i = {1'b0, instr[3:2]};
 				r2i = r1i + 8;
 				ro  = {1'b1, instr[1:0]};

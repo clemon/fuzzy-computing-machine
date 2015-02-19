@@ -10,10 +10,6 @@ module fetch (
 reg [7:0] pc;
 reg started;
 
-initial begin
-	pc <= 0;
-end
-
 always_comb
 begin
 	if(start_i == 1)
