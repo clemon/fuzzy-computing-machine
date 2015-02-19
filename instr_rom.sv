@@ -59,9 +59,19 @@ module instr_rom
 
 		// Instructions go here
 		case (pc)
+			// Program 1
 			0: instr = 8'b00000000;
 			1: instr = 8'b00000000;
 			2: instr = 8'b00000000;
+
+			// Program 2
+			3: instr = 8'b00000000;
+			4: instr = 8'b00000000;
+
+			// Program 3
+			5: instr = 8'b00000000;
+			6: instr = 8'b00000000;
+
 		endcase
 
 		// Registers
