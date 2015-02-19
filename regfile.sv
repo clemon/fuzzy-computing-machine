@@ -33,9 +33,4 @@ begin
 	end
 end
 
-/**always_comb
-begin
-	data1_o = registers[sourceReg1_i];
-	data2_o = registers[sourceReg2_i];
-end**/
 endmodule
