@@ -12,6 +12,18 @@ reg started;
 
 always_comb
 begin
+	next = pc + 1;
+	if (start_i == 1)
+		next = start_address_i;
+end
+
+always_ff @ (posedge clk)
+begin
+	pc <= next;
+end
+
+/**always_comb
+begin
 	if(start_i == 1)
 		pc = start_address_i;	
 	else begin
@@ -25,6 +37,6 @@ end
 always_ff @ (posedge clk)
 begin
 	next <= pc;
-end
+end**/
 	
 endmodule

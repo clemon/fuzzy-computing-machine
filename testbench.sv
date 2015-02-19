@@ -35,7 +35,7 @@ initial begin
 	writeFlag = 0;
 	destReg = 3'b000;
 	dataIn = 8'b00001000;
-	
+	/**
 	#10 	sourceReg1 	= 3'b000;
 			sourceReg2 	= 3'b001;
 	#20 	sourceReg1 	= 3'b010;
@@ -130,10 +130,9 @@ initial begin
 			aluRegIn2 = 8'b00000000;
 			
 	//Fetch testing
-	
+	**/
 	branchFetch = 0;
-	#50;
-	#10	start_address 	= 8'b00000001;
+	#10	start_address 	= 8'b00000101;
 	#10	start		= 1;
 	#10 	start		= 0;
 	#30	start		= 1;
@@ -143,12 +142,15 @@ initial begin
 	#10	branchFetch = 0;
 	#10	start = 1;
 	#10	start		= 0;
+			start_address	= 8'b00000001;
+	#10	start		= 1;
+	#10	start 	= 0;
 	
 end
 
 always begin
 	#5 clk = ~clk;
-	#5 clkFetch = ~clkFetch;
+	   clkFetch = ~clkFetch;
 end
 
 regfile	b2v_inst(
