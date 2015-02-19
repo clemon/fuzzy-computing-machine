@@ -21,7 +21,6 @@
 `define TBA_OP  4'b1111 	// TBA
 
 // How 2 computer
-
 module instr_rom
 	(
 		input [15:0] pc,
@@ -60,17 +59,11 @@ module instr_rom
 		// Instructions go here
 		case (pc)
 			// Program 1
-			0: instr = 8'b00000000;
-			1: instr = 8'b00000000;
-			2: instr = 8'b00000000;
-
-			// Program 2
-			3: instr = 8'b00000000;
-			4: instr = 8'b00000000;
-
-			// Program 3
-			5: instr = 8'b00000000;
-			6: instr = 8'b00000000;
+			0: instr = 8'b01000010;	// lim 1, 0
+			1: instr = 8'b11010100;	// inc $i2, 0
+			2: instr = 8'b01000011;	// lim 1, 1
+			3: instr = 8'b10010100;	// sft $i2, 0
+			4: instr = 8'b01101010;	// mvf $i2, $o2
 
 		endcase
 
