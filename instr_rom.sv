@@ -31,13 +31,20 @@ module instr_rom
 		output wire imm_flag
 	);
 
-	reg [1:0] form  = 2'b00;
-	reg [7:0] instr = 8'b00000000;
-	reg [2:0] r1i   = 3'b000;
-	reg [2:0] r2i   = 3'b000;
-	reg [2:0] ro    = 3'b000;
+	reg [1:0] form;
+	reg [7:0] instr;
+	reg [2:0] r1i; 
+	reg [2:0] r2i;  
+	reg [2:0] ro;  
 
 	always_comb begin
+
+		// Defaults - Becuase fuck SystemVerilog
+		form  = 2'b00;
+		instr = 8'b00000000;
+		r1i   = 3'b000;
+		r2i   = 3'b000;
+		ro    = 3'b000;
 
 		case (pc)
 			// Program 1
@@ -52,7 +59,7 @@ module instr_rom
 		endcase
 
 		// Switch on opcode to determine format
-		begin case (instr[7:4])
+		case (instr[7:4])
 			`LB_OP   : form = `M_FORM;
 			`LHB_OP  : form = `M_FORM;
 			`JMP_OP  : form = `C_FORM;
@@ -75,7 +82,7 @@ module instr_rom
 		$display("OPCODE: %b", opcode);
 
 		// Registers
-		begin case (form)
+		case (form)
 			`C_FORM: begin 
 				ro = (instr[0] == 0) ? 3'b010 : 3'b011;
 			end
