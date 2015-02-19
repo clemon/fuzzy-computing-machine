@@ -1,10 +1,10 @@
 module fetch (
 	input clk,    // Clock
 	input start_i,
-	input [7:0] start_address_i,
+	input [15:0] start_address_i,
 	input branch_i,	// whether or not to branch
-	input [7:0] branchloc_i,//Where to branch
-	output reg [7:0] pc
+	input [15:0] branchloc_i,//Where to branch
+	output reg [15:0] pc
 );
 
 reg [7:0] next;
