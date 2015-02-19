@@ -36,6 +36,19 @@ module instr_rom
 	reg [2:0] r1i, r2i, ro;
 
 	always_comb begin
+
+		case (pc)
+			// Program 1
+			0: instr = 8'b01000010;	// lim   1, 0
+			1: instr = 8'b11010100;	// inc $i2, 0
+			2: instr = 8'b01000011;	// lim   1, 1
+			3: instr = 8'b10010100;	// sft $i2, 0
+			4: instr = 8'b01101010;	// mvf $i2, $o2
+
+			// Output: $i2 and $o2 hold value 4
+
+		endcase
+
 		// Switch on opcode to determine format
 		case (instr[7:4])
 			`LB_OP   : form = `M_FORM;
@@ -54,17 +67,6 @@ module instr_rom
 			`INC_OP  : form = `I_FORM;
 			`HALT_OP : form = `X_FORM;
 			`TBA_OP  : form = `X_FORM;
-		endcase
-
-		// Instructions go here
-		case (pc)
-			// Program 1
-			0: instr = 8'b01000010;	// lim 1, 0
-			1: instr = 8'b11010100;	// inc $i2, 0
-			2: instr = 8'b01000011;	// lim 1, 1
-			3: instr = 8'b10010100;	// sft $i2, 0
-			4: instr = 8'b01101010;	// mvf $i2, $o2
-
 		endcase
 
 		// Registers
