@@ -17,12 +17,12 @@ end
 always_comb
 begin
 	if(start_i == 1)
-		pc <= start_address_i;	
+		pc = start_address_i;	
 	else begin
 		if(branch_i == 1)
-			pc <= pc + branchloc_i;
+			pc = pc + branchloc_i;
 		else
-			pc <= pc + 1;
+			pc = pc + 1;
 	end
 end
 
