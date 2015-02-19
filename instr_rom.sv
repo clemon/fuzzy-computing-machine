@@ -31,9 +31,11 @@ module instr_rom
 		output wire imm_flag
 	);
 
-	reg [1:0] form;
-	reg [7:0] instr;
-	reg [2:0] r1i, r2i, ro;
+	reg [1:0] form  = 2'b00;
+	reg [7:0] instr = 8'b00000000;
+	reg [2:0] r1i   = 3'b000;
+	reg [2:0] r2i   = 3'b000;
+	reg [2:0] ro    = 3'b000;
 
 	always_comb begin
 
@@ -69,21 +71,33 @@ module instr_rom
 			`TBA_OP  : form = `X_FORM;
 		endcase
 
+		$display("\nForamt: %d", form);
+		$display("OPCODE: %b", opcode);
+
 		// Registers
 		begin case (form)
-			`C_FORM: ro = (instr[0] == 0) ? 3'b010 : 3'b011;
+			`C_FORM: begin 
+				ro = (instr[0] == 0) ? 3'b010 : 3'b011;
+			end
 			`I_FORM: begin
 				r1i = instr[3:1];
 				r2i = r1i + 8; 	// Get seq. reg.
 				ro  = r1i;
+
+				$display("Reg1_i: %b Reg2_i: %b", reg1_i, reg2_i);
 			end
 			`M_FORM: begin
 				r1i = {1'b0, instr[3:2]};
 				r2i = r1i + 8;
 				ro  = {1'b1, instr[1:0]};
+
+				$display("Reg1_i: %b Reg2_i: %b", reg1_i, reg2_i);
 			end
 			default: begin end
 		endcase
+
+		$display("Reg_o: %b", reg_o);
+
 	end
 
 	assign format   = form;
