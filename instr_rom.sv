@@ -50,7 +50,7 @@ module instr_rom
 		endcase
 
 		// Switch on opcode to determine format
-		case (instr[7:4])
+		begin case (instr[7:4])
 			`LB_OP   : form = `M_FORM;
 			`LHB_OP  : form = `M_FORM;
 			`JMP_OP  : form = `C_FORM;
@@ -70,7 +70,7 @@ module instr_rom
 		endcase
 
 		// Registers
-		case (form)
+		begin case (form)
 			`C_FORM: ro = (instr[0] == 0) ? 3'b010 : 3'b011;
 			`I_FORM: begin
 				r1i = instr[3:1];
