@@ -28,7 +28,7 @@ module instr_rom
 		output wire [3:0] opcode,
 		output wire [2:0] reg1_i, reg2_i, reg_o,
 		output wire [2:0] imm,
-		output wire [1:0] imm_flag
+		output wire  imm_flag
 	);
 
 	reg [1:0] form;
@@ -113,6 +113,6 @@ module instr_rom
 	assign reg2_i   = r2i;
 	assign reg_o    = ro;
 	assign imm 	    = instr[3:1];
-	assign imm_flag[1:0] = instr[0];
+	assign imm_flag = instr[0];
 
 endmodule

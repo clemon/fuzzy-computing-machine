@@ -27,7 +27,7 @@
 
 module control(
 	input [1:0]format,
-	input [1:0]imm_flag,
+	input imm_flag,
 	input [3:0]opcode,
 	output wire [3:0]alu_inst
 );
