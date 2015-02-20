@@ -28,6 +28,7 @@ always_comb begin
 	branch_o = 0;
 	reg_o = 0;
 	over_flag = 0;
+	over_o = 0;
 
 	unique case(inst_i)
 		`OP_ADD: begin 	//0000
@@ -35,7 +36,7 @@ always_comb begin
 
 				reg_o = overflow[7:0]; 
 
-				if (overflow > 8'b00001111) begin
+				if (overflow > 8'b11111111) begin
 					over_flag = 1;
 					over_o = overflow[15:8];
 				end

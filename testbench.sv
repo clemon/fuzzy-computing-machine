@@ -7,6 +7,8 @@ reg	[15:0] start_address;
 
 wire	[3:0] aluOpCode;
 wire	[7:0] aluOutput;
+wire 	[7:0] overFlow;
+wire	[7:0] overFlowFlag;
 wire	branchTaken;
 wire	[7:0] dataMemResult;
 wire	[2:0] Immediate;
@@ -67,7 +69,9 @@ regfile	b2v_inst(
 	.r4(r4c),
 	.r5(r5c),
 	.r6(r6c),
-	.r7(r7c));
+	.r7(r7c),
+	.over_i(overFlow),
+	.overFlag_i(overFlowFlag));
 
 
 alu	b2v_inst1(
@@ -75,7 +79,9 @@ alu	b2v_inst1(
 	.reg1_i(reg1Data),
 	.reg2_i(reg2Data),
 	.branch_o(branchTaken),
-	.reg_o(aluOutput));
+	.reg_o(aluOutput),
+	.over_o(overFlow),
+	.over_flag(overFlowFlag));
 
 
 mux_reg	b2v_inst2(

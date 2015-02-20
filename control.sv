@@ -49,19 +49,23 @@ always_comb begin
 		`ADD_OP: begin
 				if (DEBUG) $display("control | ADD");
 				alu_inst[3:0] = `ALUOP_ADD; 
+				write_reg = 1;
 			end
 		`SUB_OP: begin
 				if (DEBUG) $display("control | SUB");
 				alu_inst[3:0] = `ALUOP_SUB; 
+				write_reg = 1;
 			end
 		`SFT_OP: begin
 				if(imm_flag) begin
 					if (DEBUG) $display("control | SHIFT RIGHT");
 					alu_inst[3:0] = `ALUOP_SFR;
+					write_reg = 1;
 				end
 				else begin
 					if (DEBUG) $display("control | SHIFT LEFT");
 					alu_inst[3:0] = `ALUOP_SFL;
+					write_reg = 1;
 				end
 			end
 		`BNE_OP: begin
@@ -80,10 +84,12 @@ always_comb begin
 				if(imm_flag) begin
 					if (DEBUG) $display("control | INCREMENT");
 					alu_inst[3:0] = `ALUOP_INC;
+					write_reg = 1;
 				end
 				else begin
 					if (DEBUG) $display("control | DECREMENT");
 					alu_inst[3:0] = `ALUOP_DEC;
+					write_reg = 1;
 				end
 			end
 		`LB_OP: begin 

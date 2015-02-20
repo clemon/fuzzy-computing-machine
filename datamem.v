@@ -113,11 +113,12 @@ module datamem
 	
 	end 
 
-	always @ (negedge clk)
+	always @ (*)
 	begin
 		// Write
-		if (writemem)
-			ram[addr] <= data;
+		if (writemem) begin
+			ram[addr] = data;
+		end
 	end
 
 

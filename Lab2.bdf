@@ -69,49 +69,6 @@ agreement for further details.
 	(text "VCC" (rect 160 7 180 17)(font "Arial" (font_size 6)))
 )
 (symbol
-	(rect 904 368 1096 480)
-	(text "alu" (rect 5 0 19 12)(font "Arial" ))
-	(text "inst1" (rect 8 96 31 108)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "inst_i[3..0]" (rect 0 0 51 12)(font "Arial" ))
-		(text "inst_i[3..0]" (rect 21 27 72 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "reg1_i[7..0]" (rect 0 0 55 12)(font "Arial" ))
-		(text "reg1_i[7..0]" (rect 21 43 76 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "reg2_i[7..0]" (rect 0 0 55 12)(font "Arial" ))
-		(text "reg2_i[7..0]" (rect 21 59 76 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 192 32)
-		(output)
-		(text "reg_o[7..0]" (rect 0 0 53 12)(font "Arial" ))
-		(text "reg_o[7..0]" (rect 127 27 180 39)(font "Arial" ))
-		(line (pt 192 32)(pt 176 32)(line_width 3))
-	)
-	(port
-		(pt 192 48)
-		(output)
-		(text "branch_o" (rect 0 0 44 12)(font "Arial" ))
-		(text "branch_o" (rect 134 43 178 55)(font "Arial" ))
-		(line (pt 192 48)(pt 176 48))
-	)
-	(drawing
-		(rectangle (rect 16 16 176 96))
-	)
-)
-(symbol
 	(rect -128 352 96 496)
 	(text "fetch" (rect 5 0 30 12)(font "Arial" ))
 	(text "inst4" (rect 8 128 31 140)(font "Arial" ))
@@ -432,6 +389,63 @@ agreement for further details.
 	)
 )
 (symbol
+	(rect 904 368 1096 480)
+	(text "alu" (rect 5 0 19 12)(font "Arial" ))
+	(text "inst1" (rect 8 96 31 108)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "inst_i[3..0]" (rect 0 0 51 12)(font "Arial" ))
+		(text "inst_i[3..0]" (rect 21 27 72 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reg1_i[7..0]" (rect 0 0 55 12)(font "Arial" ))
+		(text "reg1_i[7..0]" (rect 21 43 76 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "reg2_i[7..0]" (rect 0 0 55 12)(font "Arial" ))
+		(text "reg2_i[7..0]" (rect 21 59 76 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 192 32)
+		(output)
+		(text "reg_o[7..0]" (rect 0 0 53 12)(font "Arial" ))
+		(text "reg_o[7..0]" (rect 127 27 171 39)(font "Arial" ))
+		(line (pt 192 32)(pt 176 32)(line_width 3))
+	)
+	(port
+		(pt 192 48)
+		(output)
+		(text "over_o[7..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "over_o[7..0]" (rect 121 43 171 55)(font "Arial" ))
+		(line (pt 192 48)(pt 176 48)(line_width 3))
+	)
+	(port
+		(pt 192 64)
+		(output)
+		(text "branch_o" (rect 0 0 44 12)(font "Arial" ))
+		(text "branch_o" (rect 134 59 171 71)(font "Arial" ))
+		(line (pt 192 64)(pt 176 64))
+	)
+	(port
+		(pt 192 80)
+		(output)
+		(text "over_flag" (rect 0 0 47 12)(font "Arial" ))
+		(text "over_flag" (rect 132 75 171 87)(font "Arial" ))
+		(line (pt 192 80)(pt 176 80))
+	)
+	(drawing
+		(rectangle (rect 16 16 176 96))
+	)
+)
+(symbol
 	(rect 600 384 832 624)
 	(text "regfile" (rect 5 0 35 12)(font "Arial" ))
 	(text "inst9" (rect 8 224 31 236)(font "Arial" ))
@@ -466,16 +480,30 @@ agreement for further details.
 	(port
 		(pt 0 96)
 		(input)
-		(text "data_i[7..0]" (rect 0 0 55 12)(font "Arial" ))
-		(text "data_i[7..0]" (rect 21 91 76 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96)(line_width 3))
+		(text "overFlag_i" (rect 0 0 51 12)(font "Arial" ))
+		(text "overFlag_i" (rect 21 91 72 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96))
 	)
 	(port
 		(pt 0 112)
 		(input)
+		(text "data_i[7..0]" (rect 0 0 55 12)(font "Arial" ))
+		(text "data_i[7..0]" (rect 21 107 76 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "over_i[7..0]" (rect 0 0 56 12)(font "Arial" ))
+		(text "over_i[7..0]" (rect 21 123 77 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 3))
+	)
+	(port
+		(pt 0 144)
+		(input)
 		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 107 35 119)(font "Arial" ))
-		(line (pt 0 112)(pt 16 112))
+		(text "clk" (rect 21 139 35 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144))
 	)
 	(port
 		(pt 232 32)
@@ -564,10 +592,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1104 416)
-	(pt 1096 416)
-)
-(connector
 	(pt 1128 552)
 	(pt 856 552)
 	(bus)
@@ -587,14 +611,6 @@ agreement for further details.
 (connector
 	(pt -184 592)
 	(pt -184 536)
-)
-(connector
-	(pt 1104 648)
-	(pt -168 648)
-)
-(connector
-	(pt -168 648)
-	(pt -168 432)
 )
 (connector
 	(pt -168 432)
@@ -629,26 +645,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 320 720)
-	(pt 368 720)
-	(bus)
-)
-(connector
-	(pt 304 752)
-	(pt 368 752)
-	(bus)
-)
-(connector
-	(pt 368 688)
-	(pt 360 688)
-	(bus)
-)
-(connector
-	(pt 360 688)
-	(pt 360 632)
-	(bus)
-)
-(connector
 	(pt 1144 632)
 	(pt 360 632)
 	(bus)
@@ -656,16 +652,6 @@ agreement for further details.
 (connector
 	(pt 1144 632)
 	(pt 1144 400)
-	(bus)
-)
-(connector
-	(pt 368 704)
-	(pt 344 704)
-	(bus)
-)
-(connector
-	(pt 368 736)
-	(pt 336 736)
 	(bus)
 )
 (connector
@@ -684,24 +670,9 @@ agreement for further details.
 	(pt 752 136)
 )
 (connector
-	(text "branchTaken" (rect 1088 585 1100 647)(font "Arial" )(vertical))
-	(pt 1104 416)
-	(pt 1104 648)
-)
-(connector
-	(pt 344 704)
-	(pt 344 624)
-	(bus)
-)
-(connector
 	(text "aluOpCode[3..0]" (rect 762 104 842 116)(font "Arial" ))
 	(pt 896 120)
 	(pt 752 120)
-	(bus)
-)
-(connector
-	(pt 568 688)
-	(pt 576 688)
 	(bus)
 )
 (connector
@@ -722,10 +693,6 @@ agreement for further details.
 (connector
 	(pt 1160 592)
 	(pt 1160 448)
-)
-(connector
-	(pt 1160 136)
-	(pt 1160 416)
 )
 (connector
 	(pt 1176 168)
@@ -753,11 +720,6 @@ agreement for further details.
 	(pt 1568 448)
 )
 (connector
-	(pt 304 400)
-	(pt 304 752)
-	(bus)
-)
-(connector
 	(pt 496 120)
 	(pt 496 384)
 	(bus)
@@ -765,11 +727,6 @@ agreement for further details.
 (connector
 	(pt 512 136)
 	(pt 512 480)
-)
-(connector
-	(pt 320 720)
-	(pt 320 464)
-	(bus)
 )
 (connector
 	(text "ImmediateFlag" (rect 306 464 379 476)(font "Arial" ))
@@ -786,28 +743,6 @@ agreement for further details.
 	(text "Immediate[2..0]" (rect 296 448 373 460)(font "Arial" ))
 	(pt 320 464)
 	(pt 296 464)
-	(bus)
-)
-(connector
-	(pt 296 400)
-	(pt 304 400)
-	(bus)
-)
-(connector
-	(text "InstrOpcode[3..0]" (rect 314 384 400 396)(font "Arial" ))
-	(pt 304 400)
-	(pt 528 400)
-	(bus)
-)
-(connector
-	(pt 96 384)
-	(pt 104 384)
-	(bus)
-)
-(connector
-	(text "PC[15..0]" (rect 82 328 129 340)(font "Arial" ))
-	(pt 104 384)
-	(pt 112 384)
 	(bus)
 )
 (connector
@@ -836,16 +771,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1216 328)
-	(pt 1216 296)
-	(bus)
-)
-(connector
-	(pt 1304 296)
-	(pt 1216 296)
-	(bus)
-)
-(connector
 	(pt 1304 312)
 	(pt 1280 312)
 )
@@ -865,10 +790,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1160 416)
-	(pt 1568 416)
-)
-(connector
 	(pt 1280 312)
 	(pt 1280 432)
 )
@@ -883,26 +804,8 @@ agreement for further details.
 	(pt 584 368)
 )
 (connector
-	(text "regFileDataIn[7..0]" (rect 584 632 596 724)(font "Arial" )(vertical))
-	(pt 576 688)
-	(pt 576 480)
-	(bus)
-)
-(connector
-	(pt 600 592)
-	(pt 600 496)
-)
-(connector
 	(pt 584 368)
 	(pt 584 464)
-)
-(connector
-	(pt -184 592)
-	(pt 600 592)
-)
-(connector
-	(pt 600 592)
-	(pt 1160 592)
 )
 (connector
 	(text "reg1In[2..0]" (rect 306 400 362 412)(font "Arial" ))
@@ -927,16 +830,6 @@ agreement for further details.
 	(pt 600 464)
 )
 (connector
-	(pt 576 480)
-	(pt 600 480)
-	(bus)
-)
-(connector
-	(pt 336 736)
-	(pt 336 816)
-	(bus)
-)
-(connector
 	(pt 848 816)
 	(pt 336 816)
 	(bus)
@@ -950,46 +843,6 @@ agreement for further details.
 	(pt 832 416)
 	(pt 848 416)
 	(bus)
-)
-(connector
-	(pt 864 416)
-	(pt 864 328)
-	(bus)
-)
-(connector
-	(pt 1216 328)
-	(pt 864 328)
-	(bus)
-)
-(connector
-	(text "reg1Data[7..0]" (rect 850 400 920 412)(font "Arial" ))
-	(pt 864 416)
-	(pt 904 416)
-	(bus)
-)
-(connector
-	(pt 832 448)
-	(pt 880 448)
-	(bus)
-)
-(connector
-	(pt 880 448)
-	(pt 880 280)
-	(bus)
-)
-(connector
-	(text "dataD_o[7..0]" (rect 890 264 957 276)(font "Arial" ))
-	(pt 1304 280)
-	(pt 880 280)
-	(bus)
-)
-(connector
-	(pt 1176 432)
-	(pt 1280 432)
-)
-(connector
-	(pt 1280 432)
-	(pt 1568 432)
 )
 (connector
 	(text "reg2Data[7..0]" (rect 856 440 926 452)(font "Arial" ))
@@ -1008,15 +861,231 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 856 416)
-	(pt 864 416)
+	(pt 1176 432)
+	(pt 1280 432)
+)
+(connector
+	(pt 1280 432)
+	(pt 1568 432)
+)
+(connector
+	(pt 880 416)
+	(pt 880 296)
 	(bus)
+)
+(connector
+	(pt 1304 296)
+	(pt 880 296)
+	(bus)
+)
+(connector
+	(pt 856 416)
+	(pt 880 416)
+	(bus)
+)
+(connector
+	(text "reg1Data[7..0]" (rect 850 400 920 412)(font "Arial" ))
+	(pt 880 416)
+	(pt 904 416)
+	(bus)
+)
+(connector
+	(pt 832 448)
+	(pt 864 448)
+	(bus)
+)
+(connector
+	(pt 864 448)
+	(pt 864 280)
+	(bus)
+)
+(connector
+	(pt 1160 136)
+	(pt 1160 416)
+)
+(connector
+	(pt 1568 416)
+	(pt 1160 416)
+)
+(connector
+	(text "regDestData[7..0]" (rect 922 264 1010 276)(font "Arial" ))
+	(pt 1304 280)
+	(pt 864 280)
+	(bus)
+)
+(connector
+	(pt 320 720)
+	(pt 368 720)
+	(bus)
+)
+(connector
+	(pt 304 752)
+	(pt 368 752)
+	(bus)
+)
+(connector
+	(pt 360 688)
+	(pt 368 688)
+	(bus)
+)
+(connector
+	(pt 360 632)
+	(pt 360 688)
+	(bus)
+)
+(connector
+	(pt 344 704)
+	(pt 368 704)
+	(bus)
+)
+(connector
+	(pt 336 736)
+	(pt 368 736)
+	(bus)
+)
+(connector
+	(pt 344 624)
+	(pt 344 704)
+	(bus)
+)
+(connector
+	(pt 576 688)
+	(pt 568 688)
+	(bus)
+)
+(connector
+	(pt 304 400)
+	(pt 304 752)
+	(bus)
+)
+(connector
+	(pt 320 464)
+	(pt 320 720)
+	(bus)
+)
+(connector
+	(pt 336 816)
+	(pt 336 736)
+	(bus)
+)
+(connector
+	(pt 296 400)
+	(pt 304 400)
+	(bus)
+)
+(connector
+	(text "InstrOpcode[3..0]" (rect 314 384 400 396)(font "Arial" ))
+	(pt 304 400)
+	(pt 528 400)
+	(bus)
+)
+(connector
+	(pt 96 384)
+	(pt 104 384)
+	(bus)
+)
+(connector
+	(text "PC[15..0]" (rect 82 328 129 340)(font "Arial" ))
+	(pt 104 384)
+	(pt 112 384)
+	(bus)
+)
+(connector
+	(pt 552 528)
+	(pt 552 592)
+)
+(connector
+	(pt 552 528)
+	(pt 600 528)
+)
+(connector
+	(pt -184 592)
+	(pt 552 592)
+)
+(connector
+	(pt 552 592)
+	(pt 1160 592)
+)
+(connector
+	(text "regFileDataIn[7..0]" (rect 584 632 596 724)(font "Arial" )(vertical))
+	(pt 576 496)
+	(pt 576 688)
+	(bus)
+)
+(connector
+	(pt 576 496)
+	(pt 600 496)
+	(bus)
+)
+(connector
+	(pt 1120 432)
+	(pt 1096 432)
+)
+(connector
+	(pt 1096 416)
+	(pt 1104 416)
+	(bus)
+)
+(connector
+	(pt 1104 416)
+	(pt 1104 344)
+	(bus)
+)
+(connector
+	(pt 552 344)
+	(pt 552 512)
+	(bus)
+)
+(connector
+	(pt 552 512)
+	(pt 600 512)
+	(bus)
+)
+(connector
+	(pt 600 480)
+	(pt 568 480)
+)
+(connector
+	(pt 568 480)
+	(pt 568 360)
+)
+(connector
+	(pt 1096 448)
+	(pt 1112 448)
+)
+(connector
+	(pt 1112 360)
+	(pt 1112 448)
+)
+(connector
+	(text "overFlow[7..0]" (rect 562 328 632 340)(font "Arial" ))
+	(pt 1104 344)
+	(pt 552 344)
+	(bus)
+)
+(connector
+	(text "overFlowFlag" (rect 578 344 644 356)(font "Arial" ))
+	(pt 1112 360)
+	(pt 568 360)
+)
+(connector
+	(pt -168 432)
+	(pt -168 648)
+)
+(connector
+	(pt -168 648)
+	(pt 1120 648)
+)
+(connector
+	(text "branchTaken" (rect 1104 593 1116 655)(font "Arial" )(vertical))
+	(pt 1120 432)
+	(pt 1120 648)
 )
 (junction (pt -184 592))
 (junction (pt 304 400))
-(junction (pt 864 416))
 (junction (pt 104 384))
 (junction (pt 1280 432))
-(junction (pt 600 592))
 (junction (pt 848 416))
 (junction (pt 856 416))
+(junction (pt 880 416))
+(junction (pt 552 592))

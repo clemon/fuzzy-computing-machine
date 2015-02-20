@@ -45,6 +45,7 @@ module instr_rom
 		jmpLabels[0] = 8'd10;
 		jmpLabels[1] = 8'd20;
 		jmpLabels[2] = 8'd30;
+		jmpLabels[3] = 8'd3;
 	end
 	
 	always_comb begin
@@ -55,14 +56,22 @@ module instr_rom
 		r1i   = 3'bxxx;
 		r2i   = 3'bxxx;
 		ro    = 3'bxxx;
+		jmpLoc = 8'dx;
 
 		case (pc)
 			// Program 1
 			0: instr = 8'b00001100; //lb $i3, $o0
 			1: instr = 8'b00011000; //lhb $i2, $o0
-			//2: instr = 8'b00100010; //jmp lol
-			2: instr = 8'b00110111; //str $i1, $o3 (7 in 1)
-			3: instr = 8'b00000001; //lb $i0, $o1
+			2: instr = 8'b00100010; //jmp to 30
+			3: instr = 8'b00110111; //str $i1, $o3 (7 in 1)
+			4: instr = 8'b00000001; //lb $i0, $o1
+			5: instr = 8'b01001001; //lim 4 into $i3
+			6: instr = 8'b01101011; //mvf $i2 (35) into $o3 (was 1)
+			7: instr = 8'b01010111; //mvb opposite of above kek
+			8: instr = 8'b01110010;	//add
+			9: instr = 8'b10000010;	//sub
+			10: instr = 8'b10011000;
+			30: instr = 8'b00100011;//jmp back to 3
 			/*
 			0: instr = 8'b01000010;	// lim   1, 0 ($i2, reg 2)
 			1: instr = 8'b11010100;	// inc $i2, 0
@@ -74,8 +83,6 @@ module instr_rom
 			// Output: $i2 and $o2 hold value 4
 
 		endcase
-
-		jmpLoc = jmpLabels[instr[3:0]];
 		
 		// Switch on opcode to determine format
 		case (instr[7:4])
@@ -96,6 +103,11 @@ module instr_rom
 			`HALT_OP : form = `X_FORM;
 			`TBA_OP  : form = `X_FORM;
 		endcase
+		
+		if (form == `C_FORM)
+			jmpLoc = jmpLabels[instr[3:0]];
+		else if (form == `M_FORM)
+			jmpLoc = jmpLabels[{2'b11, instr[1:0]}];
 
 		$display("\nForamt: %d", form);
 		$display("OPCODE: %b", opcode);
@@ -113,9 +125,15 @@ module instr_rom
 				$display("Reg1_i: %b Reg2_i: %b", reg1_i, reg2_i);
 			end
 			`M_FORM: begin
-				r1i = {1'b0, instr[3:2]};
-				r2i = r1i + 1;
-				ro  = {1'b1, instr[1:0]};
+				if (instr[7:4] == `MVB_OP) begin
+					r1i = {1'b1, instr[1:0]};
+					ro = {1'b0, instr[3:2]};
+				end
+				else begin	
+					r1i = {1'b0, instr[3:2]};
+					r2i = r1i + 1;
+					ro  = {1'b1, instr[1:0]};
+				end
 
 				$display("Reg1_i: %b Reg2_i: %b", reg1_i, reg2_i);
 			end

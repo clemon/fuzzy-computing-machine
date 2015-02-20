@@ -35,11 +35,11 @@ assign r6 = registers[6];
 assign r7 = registers[7];
 
 initial begin
-	registers[0] = 8'b00000001;
+	registers[0] = 8'd222;
 	registers[1] = 8'b00000111;
 	registers[2] = 8'b00100011;
 	registers[3] = 8'b00000001;
-	registers[4] = 8'b00110000;
+	registers[4] = 8'b00000010;
 	registers[5] = 8'b00000011;
 	registers[6] = 8'b00000010;
 	registers[7] = 8'b00000001;
