@@ -30,44 +30,100 @@ module control(
 	input imm_flag,
 	input [3:0]opcode,
 	output reg [3:0]alu_inst,
-	output reg write_flag
+	output reg write_flag,
+	output reg write_reg
 );
 
+reg DEBUG = 1;
 
 always_comb begin
 	write_flag = 0;
+	write_reg = 0;
 	alu_inst[3:0] = 4'bxxxx;
+
 	case(opcode)
-		`ADD_OP: alu_inst[3:0] = `ALUOP_ADD; 
-		`SUB_OP: alu_inst[3:0] = `ALUOP_SUB; 
-		`SFT_OP:	begin
-						if(imm_flag)
-							alu_inst[3:0] = `ALUOP_SFR;
-						else
-							alu_inst[3:0] = `ALUOP_SFL;
-					end
-		`BNE_OP: alu_inst[3:0] = `ALUOP_BNE;
-		`BEQ_OP: alu_inst[3:0] = `ALUOP_BEQ; 
-		`BLT_OP: alu_inst[3:0] = `ALUOP_BLT; 
+		`ADD_OP: begin
+				if (DEBUG) $display("control | ADD");
+				alu_inst[3:0] = `ALUOP_ADD; 
+			end
+		`SUB_OP: begin
+				if (DEBUG) $display("control | SUB");
+				alu_inst[3:0] = `ALUOP_SUB; 
+			end
+		`SFT_OP: begin
+				if(imm_flag) begin
+					if (DEBUG) $display("control | SHIFT RIGHT");
+					alu_inst[3:0] = `ALUOP_SFR;
+				end
+				else begin
+					if (DEBUG) $display("control | SHIFT LEFT");
+					alu_inst[3:0] = `ALUOP_SFL;
+				end
+			end
+		`BNE_OP: begin
+				if (DEBUG) $display("control | BRANCH NOT EQUAL TO");
+				alu_inst[3:0] = `ALUOP_BNE;
+			end
+		`BEQ_OP: begin
+				if (DEBUG) $display("control | BRANCH EQUAL TO");
+				alu_inst[3:0] = `ALUOP_BEQ; 
+			end
+		`BLT_OP: begin
+				if (DEBUG) $display("control | BRANCH LESS THAN");
+				alu_inst[3:0] = `ALUOP_BLT; 
+			end 
 		`INC_OP: begin
-						if(imm_flag)
-							alu_inst[3:0] = `ALUOP_INC;
-						else
-							alu_inst[3:0] = `ALUOP_DEC;
-					end
+				if(imm_flag) begin
+					if (DEBUG) $display("control | INCREMENT");
+					alu_inst[3:0] = `ALUOP_INC;
+				end
+				else begin
+					if (DEBUG) $display("control | DECREMENT");
+					alu_inst[3:0] = `ALUOP_DEC;
+				end
+			end
 		`LB_OP: begin 
-						write_flag = 1;
-						alu_inst[3:0] = 4'bxxxx;
-					end
-	   /*
-		`LHB_OP:
-		`JMP_OP:
-		`STR_OP:
-		`LIM_OP:
-		`MVB_OP:
-		`MVF_OP:*/
-		//`HALT_OP:
-		//`TBA_OP:
+				if (DEBUG) $display("control | LOAD BYTE");
+				write_flag = 1;
+				alu_inst[3:0] = 4'bxxxx;
+			end
+		`LHB_OP: begin
+				if (DEBUG) $display("control | LOAD HALF BYTE");
+				write_flag = 1;
+				alu_inst[3:0] = 4'bxxxx;
+			end
+		`MVB_OP: begin
+				if (DEBUG) $display("control | MOVE BACK");
+				write_reg = 1;
+				alu_inst[3:0] = 4'bxxxx;
+			end 
+		`MVF_OP: begin
+				if (DEBUG) $display("control | MOVE FORWARD");
+				write_reg = 1;
+				alu_inst[3:0] = 4'bxxxx;
+			end
+		`JMP_OP: begin
+				if (DEBUG) $display("control | JUMP");
+				alu_inst[3:0] = 4'bxxxx;
+			end
+		`STR_OP: begin
+				if (DEBUG) $display("control | STORE");
+				write_flag = 1;
+				alu_inst[3:0] = 4'bxxxx;
+			end
+		`LIM_OP: begin
+				if (DEBUG) $display("control | LOAD IMMEDIATE");
+				write_reg = 1;
+				alu_inst[3:0] = 4'bxxxx;
+			end
+		`TBA_OP: begin
+				if (DEBUG) $display("control | TBA");
+				alu_inst[3:0] = 4'bxxxx;
+			end
+		`HALT_OP: begin
+				if (DEBUG) $display("control | HALT");
+				alu_inst[3:0] = 4'bxxxx;
+			end
 	endcase
 end
 endmodule
