@@ -53,22 +53,6 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect -136 424 32 440)
-	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "branchFetch" (rect 5 0 66 12)(font "Arial" ))
-	(pt 168 8)
-	(drawing
-		(line (pt 84 12)(pt 109 12))
-		(line (pt 84 4)(pt 109 4))
-		(line (pt 113 8)(pt 168 8))
-		(line (pt 84 12)(pt 84 4))
-		(line (pt 109 4)(pt 113 8))
-		(line (pt 109 12)(pt 113 8))
-	)
-	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
-)
-(pin
-	(input)
 	(rect -168 408 32 424)
 	(text "INPUT" (rect 157 0 185 10)(font "Arial" (font_size 6)))
 	(text "start_address[15..0]" (rect 5 0 104 12)(font "Arial" ))
@@ -534,6 +518,26 @@ applicable agreement for further details.
 (connector
 	(pt 592 464)
 	(pt 600 464)
+)
+(connector
+	(pt 1104 416)
+	(pt 1096 416)
+)
+(connector
+	(pt 1104 416)
+	(pt 1104 648)
+)
+(connector
+	(pt 1104 648)
+	(pt -8 648)
+)
+(connector
+	(pt -8 648)
+	(pt -8 432)
+)
+(connector
+	(pt -8 432)
+	(pt 32 432)
 )
 (junction (pt 272 384))
 (junction (pt -24 592))
