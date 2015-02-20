@@ -15,6 +15,8 @@ begin
 	next = pc + 1;
 	if (start_i == 1)
 		next = start_address_i;
+	else if (branch_i == 1)
+		next = branchloc_i;
 end
 
 always_ff @ (posedge clk)

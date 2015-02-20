@@ -53,14 +53,15 @@ initial begin
 	// Regfile Waveform
 	clk = 1;
 	branchFetch = 0;
-	#10	start_address 	= 16'b0000000000000101;
-	#10	start		= 1;
-	#10 	start		= 0;
+	#5	start_address 	= 16'b0000000000000101;
+	#5;
+	#5	start		= 1;
+	#15 	start		= 0;
 	#30	start		= 1;
 	#30	start 	= 0;
-	#10	branchloc = 10;
+	#5	branchloc = 10;
 			branchFetch = 1;
-	#10	branchFetch = 0;
+	#15	branchFetch = 0;
 	#10	start = 1;
 	#10	start		= 0;
 			start_address	= 8'b00000000;
