@@ -3,7 +3,9 @@ module regfile(
 	input [2:0] sourceReg2_i,
 	input [2:0] destReg_i,
 	input writeFlag_i,
+	input overFlag_i,
 	input [7:0] data_i,
+	input [7:0] over_i,
 	input clk,
 	output reg [7:0] data1_o,
 	output reg [7:0] data2_o,
@@ -48,6 +50,8 @@ begin
 	if (writeFlag_i == 1)
 	begin
 		registers[destReg_i] <= data_i;
+
+		if (overFlag_i == 1) registers[7] <= over_i;
 	end
 end
 

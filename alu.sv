@@ -15,7 +15,9 @@ module alu (
 	input [7:0] reg1_i,
 	input [7:0] reg2_i,
 	output reg [7:0] reg_o,
-	output reg branch_o
+	output reg [7:0] over_o,
+	output reg branch_o,
+	output reg over_flag
 );
 
 reg [15:0] overflow;
@@ -25,12 +27,19 @@ always_comb begin
 	overflow = 0;
 	branch_o = 0;
 	reg_o = 0;
+	over_flag = 0;
 
 	unique case(inst_i)
 		`OP_ADD: begin 	//0000
-					overflow = reg1_i + reg2_i; 
-					reg_o = overflow[7:0]; 
-					end 
+				overflow = reg1_i + reg2_i; 
+
+				reg_o = overflow[7:0]; 
+
+				if (overflow > 8'b00001111) begin
+					over_flag = 1;
+					over_o = overflow[15:8];
+				end
+			end 
 		`OP_SUB: reg_o = reg1_i - reg2_i;					//0001
 		`OP_SFL: reg_o = reg1_i << reg2_i;					//0010
 		`OP_SFR: reg_o = reg1_i >> reg2_i;					//0011
