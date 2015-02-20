@@ -18,7 +18,7 @@
 module mux_reg(
 	input  [7:0] alu_i,
 	input  [7:0] mem_i,
-	input  [7:0] rom_i,
+	input  [2:0] rom_i,
 	input  [7:0] reg_i,
 	input  [3:0] opcode,
 	output reg [7:0] muxout
@@ -35,7 +35,7 @@ always_comb begin
 		`LHB_OP : muxout = mem_i;
 		`MVB_OP : muxout = reg_i;
 		`MVF_OP : muxout = reg_i;
-		`LIM_OP : muxout = rom_i;
+		`LIM_OP : muxout = {5'b00000, rom_i};
 		default: muxout = 8'bxxxxxxxx;
 	endcase
 		

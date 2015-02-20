@@ -27,17 +27,10 @@ wire	writeRegFlag;
 initial begin
 	// Regfile Waveform
 	clk = 1;
-	#5	start_address 	= 16'b0000000000000101;
+	#5	start_address 	= 16'b0000000000000000;
 	#5;
 	#5	start		= 1;
 	#15 	start		= 0;
-	#30	start		= 1;
-	#30	start 	= 0;
-	#10	start = 1;
-	#10	start		= 0;
-			start_address	= 8'b00000000;
-	#10	start		= 1;
-	#10	start 	= 0;
 	
 end
 
@@ -97,7 +90,7 @@ datamem	b2v_inst5(
 	.writemem(writeMemFlag),
 	.readmem(readMemFlag),
 	.clk(clk),
-	.addr(aluOutput),
+	.addr(reg1Data),
 	.data(reg2Data),
 	.q(dataMemResult));
 	defparam	b2v_inst5.ADDR_WIDTH = 8;
