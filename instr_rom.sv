@@ -57,7 +57,7 @@ module instr_rom
 
 		case (pc)
 			// Product
-			/*0: instr = 8'b01000000;
+			0: instr = 8'b01000000;
 			1: instr = 8'b01101001;
 			2: instr = 8'b01000010;
 			3: instr = 8'b00001000;
@@ -65,28 +65,30 @@ module instr_rom
 			5: instr = 8'b01000100;
 			6: instr = 8'b00001000;
 			7: instr = 8'b01000000;
-			8: instr = 8'b01110110;
-			9: instr = 8'b01011010;
-			10: instr = 8'b11011001;
-			11: instr = 8'b01000001;
-			12: instr = 8'b10101101;
-			13: instr = 8'b11011010;
-			14: instr = 8'b01000111;
-			15: instr = 8'b00001100;
-			16: instr = 8'b01010100;
-			17: instr = 8'b01110110;
-			18: instr = 8'b01011010;
-			19: instr = 8'b11011001;
-			20: instr = 8'b01000001;
-			21: instr = 8'b10101101;
-			22: instr = 8'b01001011;
-			23: instr = 8'b01101101;
-			24: instr = 8'b00111001;
-			25: instr = 8'b01001001;
-			26: instr = 8'b01101101;
-			27: instr = 8'b01010011;
-			28: instr = 8'b00110001;*/
-
+			8: instr = 8'b11011001;
+			9: instr = 8'b01110110;
+			10: instr = 8'b01011010;
+			11: instr = 8'b11011001;
+			12: instr = 8'b01000001;
+			13: instr = 8'b10101101;
+			14: instr = 8'b11011010;
+			15: instr = 8'b01000111;
+			16: instr = 8'b00001100;
+			17: instr = 8'b01010100;
+			18: instr = 8'b11011001;
+			19: instr = 8'b01110110;
+			20: instr = 8'b01011010;
+			21: instr = 8'b11011001;
+			22: instr = 8'b01000001;
+			23: instr = 8'b10101101;
+			24: instr = 8'b01001011;
+			25: instr = 8'b01101101;
+			26: instr = 8'b00111001;
+			27: instr = 8'b01001001;
+			28: instr = 8'b01101101;
+			29: instr = 8'b01010011;
+			30: instr = 8'b00110001;
+			/*
 			50: instr = 8'b01001000;
 			51: instr = 8'b00001000;
 			52: instr = 8'b01011000;
@@ -190,7 +192,8 @@ module instr_rom
 			125: inst = 8'b01001111;
 			126: inst = 8'b01101111;
 			127: inst = 8'b00110011;
-
+			*/
+	
 		endcase
 		
 		// Switch on opcode to determine format
