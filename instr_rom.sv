@@ -48,10 +48,10 @@ module instr_rom
 
 		case (pc)
 			// Program 1
-			0: instr = 8'b01000010;	// lim   1, 0
+			0: instr = 8'b01000010;	// lim   1, 0 ($i2, reg 2)
 			1: instr = 8'b11010100;	// inc $i2, 0
-			2: instr = 8'b01000011;	// lim   1, 1
-			3: instr = 8'b10010100;	// sft $i2, 0
+			2: instr = 8'b01000011;	// lim   1, 1 ($i3, reg 3)
+			3: instr = 8'b10010100;	// sft $i2, 0 (shift reg 2 by reg 3)
 			4: instr = 8'b01101010;	// mvf $i2, $o2
 
 			// Output: $i2 and $o2 hold value 4
@@ -88,14 +88,14 @@ module instr_rom
 			end
 			`I_FORM: begin
 				r1i = instr[3:1];
-				r2i = r1i + 8; 	// Get seq. reg.
+				r2i = r1i + 1; 	// Get seq. reg.
 				ro  = r1i;
 
 				$display("Reg1_i: %b Reg2_i: %b", reg1_i, reg2_i);
 			end
 			`M_FORM: begin
 				r1i = {1'b0, instr[3:2]};
-				r2i = r1i + 8;
+				r2i = r1i + 1;
 				ro  = {1'b1, instr[1:0]};
 
 				$display("Reg1_i: %b Reg2_i: %b", reg1_i, reg2_i);

@@ -7,16 +7,17 @@ reg	[15:0] branchloc;
 reg	[15:0] start_address;
 wire	currentPC;
 
-wire	[2:0] SYNTHESIZED_WIRE_0;
-wire	[2:0] SYNTHESIZED_WIRE_1;
-wire	[2:0] SYNTHESIZED_WIRE_2;
-wire	[3:0] SYNTHESIZED_WIRE_3;
-wire	[7:0] SYNTHESIZED_WIRE_4;
-wire	[7:0] SYNTHESIZED_WIRE_5;
-wire	SYNTHESIZED_WIRE_6;
-wire	[1:0] SYNTHESIZED_WIRE_7;
-wire	[3:0] SYNTHESIZED_WIRE_8;
-wire	[15:0] SYNTHESIZED_WIRE_9;
+wire	[2:0] destinationRegister;
+wire	[2:0] sourceRegister1;
+wire	[2:0] sourceRegister2;
+wire	[3:0] ALUOp;
+wire	[7:0] sR1Data;
+wire	[7:0] sR2Data;
+wire	Immflag;
+wire	[1:0] InstrFormat;
+wire	[3:0] InstrOp;
+wire	[15:0] PC;
+wire	[2:0]	immediateData;
 
 /**
 //Inputs for regfile
@@ -62,7 +63,7 @@ initial begin
 	#10	branchFetch = 0;
 	#10	start = 1;
 	#10	start		= 0;
-			start_address	= 8'b00000001;
+			start_address	= 8'b00000000;
 	#10	start		= 1;
 	#10	start 	= 0;
 	
@@ -76,37 +77,38 @@ regfile	b2v_inst(
 	
 	.clk(clk),
 	
-	.destReg_i(SYNTHESIZED_WIRE_0),
-	.sourceReg1_i(SYNTHESIZED_WIRE_1),
-	.sourceReg2_i(SYNTHESIZED_WIRE_2),
-	.data1_o(SYNTHESIZED_WIRE_4),
-	.data2_o(SYNTHESIZED_WIRE_5));
+	.destReg_i(destinationRegister),
+	.sourceReg1_i(sourceRegister1),
+	.sourceReg2_i(sourceRegister2),
+	.data1_o(sR1Data),
+	.data2_o(sR2Data));
 
 
 alu	b2v_inst1(
-	.inst_i(SYNTHESIZED_WIRE_3),
-	.reg1_i(SYNTHESIZED_WIRE_4),
-	.reg2_i(SYNTHESIZED_WIRE_5)
+	.inst_i(ALUOp),
+	.reg1_i(sR1Data),
+	.reg2_i(sR2Data)
 	
 	);
 
 
 control	b2v_inst2(
-	.imm_flag(SYNTHESIZED_WIRE_6),
-	.format(SYNTHESIZED_WIRE_7),
-	.opcode(SYNTHESIZED_WIRE_8),
-	.alu_inst(SYNTHESIZED_WIRE_3));
+	.imm_flag(Immflag),
+	.format(InstrFormat),
+	.opcode(InstrOp),
+	.alu_inst(ALUOp));
 
 
 instr_rom	b2v_inst3(
-	.pc(SYNTHESIZED_WIRE_9),
-	.imm_flag(SYNTHESIZED_WIRE_6),
-	.format(SYNTHESIZED_WIRE_7),
+	.pc(PC),
+	.imm_flag(Immflag),
+	.format(InstrFormat),
 	
-	.opcode(SYNTHESIZED_WIRE_8),
-	.reg1_i(SYNTHESIZED_WIRE_1),
-	.reg2_i(SYNTHESIZED_WIRE_2),
-	.reg_o(SYNTHESIZED_WIRE_0));
+	.opcode(InstrOp),
+	.reg1_i(sourceRegister1),
+	.reg2_i(sourceRegister2),
+	.reg_o(destinationRegister),
+	.imm(immediateData));
 
 
 fetch	b2v_inst4(
@@ -115,7 +117,7 @@ fetch	b2v_inst4(
 	.branch_i(branchFetch),
 	.branchloc_i(branchloc),
 	.start_address_i(start_address),
-	.pc(SYNTHESIZED_WIRE_9));
+	.pc(PC));
 
 
 endmodule
