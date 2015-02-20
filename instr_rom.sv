@@ -43,9 +43,6 @@ module instr_rom
 
 	initial begin	
 		jmpLabels[0] = 8'd10;
-		jmpLabels[1] = 8'd20;
-		jmpLabels[2] = 8'd30;
-		jmpLabels[3] = 8'd3;
 	end
 	
 	always_comb begin
@@ -59,22 +56,33 @@ module instr_rom
 		jmpLoc = 8'dx;
 
 		case (pc)
-			// Program 1
-			0: instr = 8'b00001100; //lb $i3, $o0
-			1: instr = 8'b00011000; //lhb $i2, $o0
-			2: instr = 8'b00100010; //jmp to 30
-			3: instr = 8'b00110111; //str $i1, $o3 (7 in 1)
-			4: instr = 8'b00000001; //lb $i0, $o1
-			5: instr = 8'b01001001; //lim 4 into $i3
-			6: instr = 8'b01101011; //mvf $i2 (35) into $o3 (was 1)
-			7: instr = 8'b01010111; //mvb opposite of above kek
-			8: instr = 8'b01110010;	//add
-			9: instr = 8'b10000010;	//sub
-			10: instr = 8'b10010100;
-			11: instr = 8'b11010000;
+			// Product
+			0: instr = 8'b01000010;
+			1: instr = 8'b00001000;
+			2: instr = 8'b01010100;
+			3: instr = 8'b01000100;
+			4: instr = 8'b00001000;
+			5: instr = 8'b01000000;
+			6: instr = 8'b00100000;
+			7: instr = 8'b01000111;
+			8: instr = 8'b00001100;
+			9: instr = 8'b01010100;
+			10: instr = 8'b01110110;
+			11: instr = 8'b01011010;
 			12: instr = 8'b11010001;
-			13: instr = 8'b11010001;
-			30: instr = 8'b00100011;//jmp back to 3
+			13: instr = 8'b01001111;
+			14: instr = 8'b11010110;
+			15: instr = 8'b11010110;
+			16: instr = 8'b01101111;
+			17: instr = 8'b01000001;
+			18: instr = 8'b11001111;
+			19: instr = 8'b01001011;
+			20: instr = 8'b01101101;
+			21: instr = 8'b00111001;
+			22: instr = 8'b01001001;
+			23: instr = 8'b01101101;
+			24: instr = 8'b01010011;
+			25: instr = 8'b00110001;
 
 		endcase
 		
