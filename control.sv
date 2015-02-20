@@ -38,9 +38,9 @@ module control(
 reg DEBUG = 1;
 
 always_comb begin
-	write_mem = 0;
-	write_reg = 0;
-	read_mem = 0;
+	write_mem = 1'bx;
+	write_reg = 1'bx;
+	read_mem = 1'bx;
 	alu_inst[3:0] = 4'bxxxx;
 
 	case(opcode)
