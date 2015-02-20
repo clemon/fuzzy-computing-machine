@@ -322,49 +322,6 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 560 224 760 336)
-	(text "control" (rect 5 0 38 12)(font "Arial" ))
-	(text "inst2" (rect 8 96 31 108)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "format[1..0]" (rect 0 0 59 12)(font "Arial" ))
-		(text "format[1..0]" (rect 21 27 80 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "imm_flag" (rect 0 0 46 12)(font "Arial" ))
-		(text "imm_flag" (rect 21 43 67 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "opcode[3..0]" (rect 0 0 61 12)(font "Arial" ))
-		(text "opcode[3..0]" (rect 21 59 82 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 200 32)
-		(output)
-		(text "alu_inst[3..0]" (rect 0 0 63 12)(font "Arial" ))
-		(text "alu_inst[3..0]" (rect 126 27 189 39)(font "Arial" ))
-		(line (pt 200 32)(pt 184 32)(line_width 3))
-	)
-	(port
-		(pt 200 48)
-		(output)
-		(text "write_flag" (rect 0 0 47 12)(font "Arial" ))
-		(text "write_flag" (rect 140 43 187 55)(font "Arial" ))
-		(line (pt 200 48)(pt 184 48))
-	)
-	(drawing
-		(rectangle (rect 16 16 184 96))
-	)
-)
-(symbol
 	(rect 1168 352 1400 496)
 	(text "datamem" (rect 5 0 51 12)(font "Arial" ))
 	(text "inst5" (rect 8 128 31 140)(font "Arial" ))
@@ -419,6 +376,56 @@ agreement for further details.
 		(rectangle (rect 16 16 216 128))
 	)
 	(annotation_block (parameter)(rect 1400 320 1600 352))
+)
+(symbol
+	(rect 560 224 760 336)
+	(text "control" (rect 5 0 38 12)(font "Arial" ))
+	(text "inst6" (rect 8 96 31 108)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "format[1..0]" (rect 0 0 59 12)(font "Arial" ))
+		(text "format[1..0]" (rect 21 27 80 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "imm_flag" (rect 0 0 46 12)(font "Arial" ))
+		(text "imm_flag" (rect 21 43 67 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "opcode[3..0]" (rect 0 0 61 12)(font "Arial" ))
+		(text "opcode[3..0]" (rect 21 59 82 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 200 32)
+		(output)
+		(text "alu_inst[3..0]" (rect 0 0 63 12)(font "Arial" ))
+		(text "alu_inst[3..0]" (rect 126 27 189 39)(font "Arial" ))
+		(line (pt 200 32)(pt 184 32)(line_width 3))
+	)
+	(port
+		(pt 200 48)
+		(output)
+		(text "write_flag" (rect 0 0 47 12)(font "Arial" ))
+		(text "write_flag" (rect 140 43 187 55)(font "Arial" ))
+		(line (pt 200 48)(pt 184 48))
+	)
+	(port
+		(pt 200 64)
+		(output)
+		(text "write_reg" (rect 0 0 43 12)(font "Arial" ))
+		(text "write_reg" (rect 143 59 186 71)(font "Arial" ))
+		(line (pt 200 64)(pt 184 64))
+	)
+	(drawing
+		(rectangle (rect 16 16 184 96))
+	)
 )
 (connector
 	(pt 272 384)
@@ -544,26 +551,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 760 272)
-	(pt 768 272)
-)
-(connector
-	(pt 768 272)
-	(pt 768 376)
-)
-(connector
-	(pt 768 376)
-	(pt 592 376)
-)
-(connector
-	(pt 592 376)
-	(pt 592 464)
-)
-(connector
-	(pt 592 464)
-	(pt 600 464)
-)
-(connector
 	(pt 1104 416)
 	(pt 1096 416)
 )
@@ -641,6 +628,38 @@ agreement for further details.
 (connector
 	(pt 584 592)
 	(pt 1160 592)
+)
+(connector
+	(pt 760 272)
+	(pt 1160 272)
+)
+(connector
+	(pt 1160 272)
+	(pt 1160 416)
+)
+(connector
+	(pt 1168 416)
+	(pt 1160 416)
+)
+(connector
+	(pt 760 288)
+	(pt 776 288)
+)
+(connector
+	(pt 600 480)
+	(pt 584 480)
+)
+(connector
+	(pt 776 288)
+	(pt 776 368)
+)
+(connector
+	(pt 776 368)
+	(pt 584 368)
+)
+(connector
+	(pt 584 480)
+	(pt 584 368)
 )
 (junction (pt 272 384))
 (junction (pt -24 592))
