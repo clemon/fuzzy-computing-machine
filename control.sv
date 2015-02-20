@@ -85,44 +85,35 @@ always_comb begin
 		`LB_OP: begin 
 				if (DEBUG) $display("control | LOAD BYTE");
 				write_flag = 1;
-				alu_inst[3:0] = 4'bxxxx;
 			end
 		`LHB_OP: begin
 				if (DEBUG) $display("control | LOAD HALF BYTE");
 				write_flag = 1;
-				alu_inst[3:0] = 4'bxxxx;
 			end
 		`MVB_OP: begin
 				if (DEBUG) $display("control | MOVE BACK");
 				write_reg = 1;
-				alu_inst[3:0] = 4'bxxxx;
 			end 
 		`MVF_OP: begin
 				if (DEBUG) $display("control | MOVE FORWARD");
 				write_reg = 1;
-				alu_inst[3:0] = 4'bxxxx;
 			end
 		`JMP_OP: begin
 				if (DEBUG) $display("control | JUMP");
-				alu_inst[3:0] = 4'bxxxx;
 			end
 		`STR_OP: begin
 				if (DEBUG) $display("control | STORE");
 				write_flag = 1;
-				alu_inst[3:0] = 4'bxxxx;
 			end
 		`LIM_OP: begin
 				if (DEBUG) $display("control | LOAD IMMEDIATE");
 				write_reg = 1;
-				alu_inst[3:0] = 4'bxxxx;
 			end
 		`TBA_OP: begin
 				if (DEBUG) $display("control | TBA");
-				alu_inst[3:0] = 4'bxxxx;
 			end
 		`HALT_OP: begin
 				if (DEBUG) $display("control | HALT");
-				alu_inst[3:0] = 4'bxxxx;
 			end
 	endcase
 end

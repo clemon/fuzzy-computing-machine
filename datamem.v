@@ -2,7 +2,7 @@
 // Single port RAM with single read/write address and initial contents 
 // specified with an initial block
 
-module single_port_ram_with_init
+module datamem
 #(parameter ADDR_WIDTH=8)
 (
 	input [7:0] data,

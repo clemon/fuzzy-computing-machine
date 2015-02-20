@@ -18,6 +18,7 @@ wire	[1:0] InstrFormat;
 wire	[3:0] InstrOp;
 wire	[15:0] PC;
 wire	[2:0]	immediateData;
+wire	[7:0] aluOut;
 
 /**
 //Inputs for regfile
@@ -120,5 +121,14 @@ fetch	b2v_inst4(
 	.start_address_i(start_address),
 	.pc(PC));
 
-
+datamem	b2v_inst6(
+	
+	
+	.clk(clk),
+	.addr(aluOut),
+	.data(sR2Data)
+	
+	);
+	defparam	b2v_inst6.ADDR_WIDTH = 8;
+	
 endmodule
