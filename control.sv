@@ -29,14 +29,17 @@ module control(
 	input [1:0]format,
 	input imm_flag,
 	input [3:0]opcode,
-	output reg [3:0]alu_inst
+	output reg [3:0]alu_inst,
+	output reg write_flag
 );
 
 
 always_comb begin
+	write_flag = 0;
+	alu_inst[3:0] = 4'bxxxx;
 	case(opcode)
-		`ADD_OP: alu_inst[3:0] = `ALUOP_ADD;
-		`SUB_OP: alu_inst[3:0] = `ALUOP_SUB;
+		`ADD_OP: alu_inst[3:0] = `ALUOP_ADD; 
+		`SUB_OP: alu_inst[3:0] = `ALUOP_SUB; 
 		`SFT_OP:	begin
 						if(imm_flag)
 							alu_inst[3:0] = `ALUOP_SFR;
@@ -44,16 +47,19 @@ always_comb begin
 							alu_inst[3:0] = `ALUOP_SFL;
 					end
 		`BNE_OP: alu_inst[3:0] = `ALUOP_BNE;
-		`BEQ_OP: alu_inst[3:0] = `ALUOP_BEQ;
-		`BLT_OP: alu_inst[3:0] = `ALUOP_BLT;
+		`BEQ_OP: alu_inst[3:0] = `ALUOP_BEQ; 
+		`BLT_OP: alu_inst[3:0] = `ALUOP_BLT; 
 		`INC_OP: begin
 						if(imm_flag)
 							alu_inst[3:0] = `ALUOP_INC;
 						else
 							alu_inst[3:0] = `ALUOP_DEC;
 					end
-		default: alu_inst[3:0] = 4'bxxxx;
-	   /*`LB_OP:
+		`LB_OP: begin 
+						write_flag = 1;
+						alu_inst[3:0] = 4'bxxxx;
+					end
+	   /*
 		`LHB_OP:
 		`JMP_OP:
 		`STR_OP:

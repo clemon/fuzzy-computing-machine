@@ -81,24 +81,24 @@ TDI                          : A3        : input  :                   :         
 ~ALTERA_DCLK~                : A4        : output : 2.5 V             :         : 9         : N              
 ~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP : A5        : input  : 2.5 V             :         : 9         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : A6        :        :                   :         : 8         :                
-clk                          : A7        : input  : 2.5 V             :         : 8         : N              
-start_address[0]             : A8        : input  : 2.5 V             :         : 8         : N              
-branchloc[4]                 : A9        : input  : 2.5 V             :         : 7         : N              
-branchloc[3]                 : A10       : input  : 2.5 V             :         : 7         : N              
-start_address[2]             : A11       : input  : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A7        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : A8        :        :                   :         : 8         :                
+GND+                         : A9        :        :                   :         : 7         :                
+GND+                         : A10       :        :                   :         : 7         :                
+branchloc[0]                 : A11       : input  : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : A12       :        :                   :         : 7         :                
-start_address[11]            : A13       : input  : 2.5 V             :         : 7         : N              
+branchloc[8]                 : A13       : input  : 2.5 V             :         : 7         : N              
 GND                          : B1        : gnd    :                   :         :           :                
 GND                          : B2        : gnd    :                   :         :           :                
 TCK                          : B3        : input  :                   :         : 9         :                
 GND                          : B4        : gnd    :                   :         :           :                
 ~ALTERA_ASDO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : B5        : input  : 2.5 V             :         : 9         : N              
-branchloc[13]                : B6        : input  : 2.5 V             :         : 8         : N              
+branchloc[6]                 : B6        : input  : 2.5 V             :         : 8         : N              
 GND                          : B7        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B8        :        :                   :         : 7         :                
+start_address[6]             : B8        : input  : 2.5 V             :         : 7         : N              
 GND                          : B9        : gnd    :                   :         :           :                
-branchloc[2]                 : B10       : input  : 2.5 V             :         : 7         : N              
-start_address[1]             : B11       : input  : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B10       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : B11       :        :                   :         : 7         :                
 GND                          : B12       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B13       :        :                   :         : 7         :                
 GXB_NC                       : C1        :        :                   :         : QL0       :                
@@ -108,11 +108,11 @@ nCE                          : C4        :        :                   :         
 ~ALTERA_NCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : C5        : input  : 2.5 V             :         : 9         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C6        :        :                   :         : 8         :                
 VCCIO8                       : C7        : power  :                   : 2.5V    : 8         :                
-branchloc[14]                : C8        : input  : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C8        :        :                   :         : 7         :                
 VCCIO7                       : C9        : power  :                   : 2.5V    : 7         :                
 VCCIO7                       : C10       : power  :                   : 2.5V    : 7         :                
-branchFetch                  : C11       : input  : 2.5 V             :         : 7         : N              
-branchloc[9]                 : C12       : input  : 2.5 V             :         : 7         : N              
+branchloc[11]                : C11       : input  : 2.5 V             :         : 7         : N              
+branchloc[2]                 : C12       : input  : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C13       :        :                   :         : 7         :                
 GND                          : D1        : gnd    :                   :         :           :                
 GND                          : D2        : gnd    :                   :         :           :                
@@ -123,7 +123,7 @@ GND                          : D6        : gnd    :                   :         
 VCC_CLKIN8A                  : D7        : power  :                   : 2.5V    : 8A        :                
 GND                          : D8        : gnd    :                   :         :           :                
 VCCA                         : D9        : power  :                   : 2.5V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D10       :        :                   :         : 6         :                
+start_address[1]             : D10       : input  : 2.5 V             :         : 6         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D11       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D12       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D13       :        :                   :         : 7         :                
@@ -136,7 +136,7 @@ GXB_GND*                     : E6        :        :                   :         
 GXB_GND*                     : E7        :        :                   :         : 8A        :                
 VCCINT                       : E8        : power  :                   : 1.2V    :           :                
 GND                          : E9        : gnd    :                   :         :           :                
-branchloc[6]                 : E10       : input  : 2.5 V             :         : 6         : N              
+branchloc[4]                 : E10       : input  : 2.5 V             :         : 6         : N              
 VCCIO6                       : E11       : power  :                   : 2.5V    : 6         :                
 GND                          : E12       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E13       :        :                   :         : 6         :                
@@ -148,11 +148,11 @@ VCCINT                       : F5        : power  :                   : 1.2V    
 GND                          : F6        : gnd    :                   :         :           :                
 VCCINT                       : F7        : power  :                   : 1.2V    :           :                
 GND                          : F8        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F9        :        :                   :         : 6         :                
-start_address[15]            : F10       : input  : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : F11       :        :                   :         : 6         :                
-start_address[4]             : F12       : input  : 2.5 V             :         : 6         : N              
-start_address[5]             : F13       : input  : 2.5 V             :         : 6         : N              
+start_address[2]             : F9        : input  : 2.5 V             :         : 6         : N              
+start_address[0]             : F10       : input  : 2.5 V             :         : 6         : N              
+start_address[4]             : F11       : input  : 2.5 V             :         : 6         : N              
+start_address[7]             : F12       : input  : 2.5 V             :         : 6         : N              
+start_address[8]             : F13       : input  : 2.5 V             :         : 6         : N              
 GXB_NC                       : G1        :        :                   :         : QL0       :                
 GXB_NC                       : G2        :        :                   :         : QL0       :                
 VCCH_GXB                     : G3        : power  :                   : 2.5V    :           :                
@@ -161,11 +161,11 @@ GND                          : G5        : gnd    :                   :         
 VCCINT                       : G6        : power  :                   : 1.2V    :           :                
 GND                          : G7        : gnd    :                   :         :           :                
 VCCINT                       : G8        : power  :                   : 1.2V    :           :                
-start                        : G9        : input  : 2.5 V             :         : 6         : N              
-start_address[14]            : G10       : input  : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : G9        :        :                   :         : 6         :                
+branchloc[14]                : G10       : input  : 2.5 V             :         : 6         : N              
 VCCIO6                       : G11       : power  :                   : 2.5V    : 6         :                
 GND                          : G12       : gnd    :                   :         :           :                
-start_address[8]             : G13       : input  : 2.5 V             :         : 5         : N              
+start_address[11]            : G13       : input  : 2.5 V             :         : 5         : N              
 GND                          : H1        : gnd    :                   :         :           :                
 GND                          : H2        : gnd    :                   :         :           :                
 VCCL_GXB                     : H3        : power  :                   : 1.2V    :           :                
@@ -177,8 +177,8 @@ GND                          : H8        : gnd    :                   :         
 VCCA                         : H9        : power  :                   : 2.5V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H10       :        :                   :         : 5         :                
 VCCIO5                       : H11       : power  :                   : 2.5V    : 5         :                
-start_address[6]             : H12       : input  : 2.5 V             :         : 5         : N              
-start_address[7]             : H13       : input  : 2.5 V             :         : 5         : N              
+branchloc[7]                 : H12       : input  : 2.5 V             :         : 5         : N              
+start_address[10]            : H13       : input  : 2.5 V             :         : 5         : N              
 GXB_GND*                     : J1        :        :                   :         : QL0       :                
 GXB_GND*                     : J2        :        :                   :         : QL0       :                
 VCCA_GXB                     : J3        : power  :                   : 2.5V    :           :                
@@ -191,7 +191,7 @@ GND                          : J9        : gnd    :                   :         
 VCCD_PLL                     : J10       : power  :                   : 1.2V    :           :                
 VCCIO5                       : J11       : power  :                   : 2.5V    : 5         :                
 GND                          : J12       : gnd    :                   :         :           :                
-branchloc[10]                : J13       : input  : 2.5 V             :         : 5         : N              
+start_address[14]            : J13       : input  : 2.5 V             :         : 5         : N              
 GND                          : K1        : gnd    :                   :         :           :                
 GND                          : K2        : gnd    :                   :         :           :                
 GND                          : K3        : gnd    :                   :         :           :                
@@ -200,47 +200,47 @@ MSEL0                        : K5        :        :                   :         
 nSTATUS                      : K6        :        :                   :         : 3         :                
 VCC_CLKIN3A                  : K7        : power  :                   : 2.5V    : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K8        :        :                   :         : 4         :                
-branchloc[8]                 : K9        : input  : 2.5 V             :         : 4         : N              
-branchloc[12]                : K10       : input  : 2.5 V             :         : 4         : N              
-clkFetch                     : K11       : input  : 2.5 V             :         : 5         : N              
-branchloc[15]                : K12       : input  : 2.5 V             :         : 5         : N              
-start_address[9]             : K13       : input  : 2.5 V             :         : 5         : N              
+branchloc[5]                 : K9        : input  : 2.5 V             :         : 4         : N              
+branchloc[10]                : K10       : input  : 2.5 V             :         : 4         : N              
+branchloc[1]                 : K11       : input  : 2.5 V             :         : 5         : N              
+branchloc[9]                 : K12       : input  : 2.5 V             :         : 5         : N              
+start_address[12]            : K13       : input  : 2.5 V             :         : 5         : N              
 RREF                         : L1        :        :                   :         :           :                
 GND                          : L2        : gnd    :                   :         :           :                
 MSEL2                        : L3        :        :                   :         : 3         :                
-start_address[12]            : L4        : input  : 2.5 V             :         : 3         : N              
+start_address[9]             : L4        : input  : 2.5 V             :         : 3         : N              
 currentPC                    : L5        : output : 2.5 V             :         : 3         : N              
 VCCIO3                       : L6        : power  :                   : 2.5V    : 3         :                
-branchloc[11]                : L7        : input  : 2.5 V             :         : 3         : N              
+branchloc[13]                : L7        : input  : 2.5 V             :         : 3         : N              
 VCCIO4                       : L8        : power  :                   : 2.5V    : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L9        :        :                   :         : 4         :                
 VCCIO4                       : L10       : power  :                   : 2.5V    : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L11       :        :                   :         : 4         :                
-branchloc[1]                 : L12       : input  : 2.5 V             :         : 5         : N              
-start_address[13]            : L13       : input  : 2.5 V             :         : 5         : N              
+branchloc[15]                : L12       : input  : 2.5 V             :         : 5         : N              
+branchloc[12]                : L13       : input  : 2.5 V             :         : 5         : N              
 GND                          : M1        : gnd    :                   :         :           :                
 VCCA_GXB                     : M2        : power  :                   : 2.5V    :           :                
 NC                           : M3        :        :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : M4        :        :                   :         : 3         :                
 GND                          : M5        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : M6        :        :                   :         : 3         :                
-GND+                         : M7        :        :                   :         : 4         :                
+clk                          : M7        : input  : 2.5 V             :         : 4         : N              
 GND                          : M8        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M9        :        :                   :         : 4         :                
+start_address[13]            : M9        : input  : 2.5 V             :         : 4         : N              
 GND                          : M10       : gnd    :                   :         :           :                
-branchloc[7]                 : M11       : input  : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : M11       :        :                   :         : 4         :                
 GND                          : M12       : gnd    :                   :         :           :                
-branchloc[0]                 : M13       : input  : 2.5 V             :         : 5         : N              
+branchloc[3]                 : M13       : input  : 2.5 V             :         : 5         : N              
 VCCL_GXB                     : N1        : power  :                   : 1.2V    :           :                
 NC                           : N2        :        :                   :         :           :                
 MSEL1                        : N3        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N4        :        :                   :         : 3         :                
 ~ALTERA_NCEO~ / RESERVED_OUTPUT_OPEN_DRAIN : N5        : output : 2.5 V             :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : N6        :        :                   :         : 3         :                
-GND+                         : N7        :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N8        :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N9        :        :                   :         : 4         :                
-branchloc[5]                 : N10       : input  : 2.5 V             :         : 4         : N              
-start_address[10]            : N11       : input  : 2.5 V             :         : 4         : N              
+start                        : N7        : input  : 2.5 V             :         : 4         : N              
+branchFetch                  : N8        : input  : 2.5 V             :         : 4         : N              
+start_address[15]            : N9        : input  : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N10       :        :                   :         : 4         :                
+start_address[5]             : N11       : input  : 2.5 V             :         : 4         : N              
 start_address[3]             : N12       : input  : 2.5 V             :         : 4         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : N13       :        :                   :         : 5         :                
