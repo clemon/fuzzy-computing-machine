@@ -53,6 +53,7 @@ module instr_rom
 			2: instr = 8'b01000011;	// lim   1, 1 ($i3, reg 3)
 			3: instr = 8'b10010100;	// sft $i2, 0 (shift reg 2 by reg 3)
 			4: instr = 8'b01101010;	// mvf $i2, $o2
+			5: instr = 8'b00000000; // lb $i0, $o0
 
 			// Output: $i2 and $o2 hold value 4
 
