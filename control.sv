@@ -57,10 +57,12 @@ always_comb begin
 					end
 		`LB_OP: begin 
 						write_flag = 1;
-						alu_inst[3:0] = 4'bxxxx;
 					end
+		`LHB_OP: begin
+						write_flag = 1;
+					end
+						
 	   /*
-		`LHB_OP:
 		`JMP_OP:
 		`STR_OP:
 		`LIM_OP:
