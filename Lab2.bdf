@@ -586,6 +586,43 @@ agreement for further details.
 		(rectangle (rect 16 16 216 224))
 	)
 )
+(symbol
+	(rect -56 680 144 792)
+	(text "mux15" (rect 162 0 195 12)(font "Arial" ))
+	(text "inst14" (rect 163 96 192 108)(font "Arial" ))
+	(port
+		(pt 200 32)
+		(input)
+		(text "input1[15..0]" (rect 0 0 61 12)(font "Arial" ))
+		(text "input1[15..0]" (rect 118 27 179 39)(font "Arial" ))
+		(line (pt 200 32)(pt 184 32)(line_width 3))
+	)
+	(port
+		(pt 200 48)
+		(input)
+		(text "input2[7..0]" (rect 0 0 55 12)(font "Arial" ))
+		(text "input2[7..0]" (rect 124 43 179 55)(font "Arial" ))
+		(line (pt 200 48)(pt 184 48)(line_width 3))
+	)
+	(port
+		(pt 200 64)
+		(input)
+		(text "sel[3..0]" (rect 0 0 40 12)(font "Arial" ))
+		(text "sel[3..0]" (rect 139 59 179 71)(font "Arial" ))
+		(line (pt 200 64)(pt 184 64)(line_width 3))
+	)
+	(port
+		(pt 0 32)
+		(output)
+		(text "muxout[15..0]" (rect 0 0 68 12)(font "Arial" ))
+		(text "muxout[15..0]" (rect 21 27 78 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 184 96))
+	)
+	(flipy)
+)
 (connector
 	(pt 896 400)
 	(pt 904 400)
@@ -751,21 +788,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 344 552)
-	(pt 344 496)
-	(bus)
-)
-(connector
-	(pt 344 552)
-	(pt -152 552)
-	(bus)
-)
-(connector
-	(pt -152 448)
-	(pt -152 552)
-	(bus)
-)
-(connector
 	(pt -152 448)
 	(pt -128 448)
 	(bus)
@@ -890,11 +912,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 832 448)
-	(pt 864 448)
-	(bus)
-)
-(connector
 	(pt 864 448)
 	(pt 864 280)
 	(bus)
@@ -971,12 +988,6 @@ agreement for further details.
 (connector
 	(pt 296 400)
 	(pt 304 400)
-	(bus)
-)
-(connector
-	(text "InstrOpcode[3..0]" (rect 314 384 400 396)(font "Arial" ))
-	(pt 304 400)
-	(pt 528 400)
 	(bus)
 )
 (connector
@@ -1081,6 +1092,99 @@ agreement for further details.
 	(pt 1120 432)
 	(pt 1120 648)
 )
+(connector
+	(pt 344 552)
+	(pt 208 552)
+	(bus)
+)
+(connector
+	(text "jmpLoc[15..0]" (rect 344 485 356 552)(font "Arial" )(vertical))
+	(pt 344 552)
+	(pt 344 496)
+	(bus)
+)
+(connector
+	(pt 208 712)
+	(pt 144 712)
+	(bus)
+)
+(connector
+	(pt 208 552)
+	(pt 208 712)
+	(bus)
+)
+(connector
+	(pt 288 728)
+	(pt 144 728)
+	(bus)
+)
+(connector
+	(pt 288 848)
+	(pt 288 728)
+	(bus)
+)
+(connector
+	(pt -152 448)
+	(pt -152 712)
+	(bus)
+)
+(connector
+	(text "finalJmpLoc[15..0]" (rect -142 696 -50 708)(font "Arial" ))
+	(pt -152 712)
+	(pt -56 712)
+	(bus)
+)
+(connector
+	(pt 144 744)
+	(pt 272 744)
+	(bus)
+)
+(connector
+	(pt 272 744)
+	(pt 272 576)
+	(bus)
+)
+(connector
+	(pt 392 576)
+	(pt 272 576)
+	(bus)
+)
+(connector
+	(pt 392 576)
+	(pt 392 400)
+	(bus)
+)
+(connector
+	(text "InstrOpcode[3..0]" (rect 314 384 400 396)(font "Arial" ))
+	(pt 304 400)
+	(pt 392 400)
+	(bus)
+)
+(connector
+	(pt 392 400)
+	(pt 528 400)
+	(bus)
+)
+(connector
+	(pt 288 848)
+	(pt 840 848)
+	(bus)
+)
+(connector
+	(pt 840 448)
+	(pt 840 848)
+	(bus)
+)
+(connector
+	(pt 832 448)
+	(pt 840 448)
+	(bus)
+)
+(connector
+	(pt 840 448)
+	(pt 864 448)
+	(bus)
+)
 (junction (pt -184 592))
 (junction (pt 304 400))
 (junction (pt 104 384))
@@ -1089,3 +1193,5 @@ agreement for further details.
 (junction (pt 856 416))
 (junction (pt 880 416))
 (junction (pt 552 592))
+(junction (pt 840 448))
+(junction (pt 392 400))

@@ -70,17 +70,11 @@ module instr_rom
 			7: instr = 8'b01010111; //mvb opposite of above kek
 			8: instr = 8'b01110010;	//add
 			9: instr = 8'b10000010;	//sub
-			10: instr = 8'b10011000;
+			10: instr = 8'b10010100;
+			11: instr = 8'b11010000;
+			12: instr = 8'b11010001;
+			13: instr = 8'b11010001;
 			30: instr = 8'b00100011;//jmp back to 3
-			/*
-			0: instr = 8'b01000010;	// lim   1, 0 ($i2, reg 2)
-			1: instr = 8'b11010100;	// inc $i2, 0
-			2: instr = 8'b01000011;	// lim   1, 1 ($i3, reg 3)
-			3: instr = 8'b10010100;	// sft $i2, 0 (shift reg 2 by reg 3)
-			4: instr = 8'b01101010;	// mvf $i2, $o2
-			5: instr = 8'b00000000; // lb $i2, $o0
-*/
-			// Output: $i2 and $o2 hold value 4
 
 		endcase
 		

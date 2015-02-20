@@ -37,6 +37,7 @@ wire [7:0] r6c;
 wire [7:0] r7c;
 
 wire [15:0] jmpLoc;
+wire [15:0] finalJmpLoc;
 wire [7:0] memAddressReadWrite;
 
 initial begin
@@ -109,7 +110,7 @@ fetch	b2v_inst4(
 	.clk(clk),
 	.start_i(start),
 	.branch_i(branchTaken),
-	.branchloc_i(jmpLoc),
+	.branchloc_i(finalJmpLoc),
 	.start_address_i(start_address),
 	.pc(PC));
 
@@ -140,6 +141,11 @@ mux		b2v_inst11(
 	
 	.muxout(memAddressReadWrite));
 
+mux15		b2v_inst14(
+	.input1(jmpLoc),
+	.input2(regDestData),
+	.sel(opcode),
+	.muxout(finalJmpLoc));
 	
 
 

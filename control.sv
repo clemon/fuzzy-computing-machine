@@ -83,12 +83,12 @@ always_comb begin
 		`INC_OP: begin
 				if(imm_flag) begin
 					if (DEBUG) $display("control | INCREMENT");
-					alu_inst[3:0] = `ALUOP_INC;
+					alu_inst[3:0] = `ALUOP_DEC;
 					write_reg = 1;
 				end
 				else begin
 					if (DEBUG) $display("control | DECREMENT");
-					alu_inst[3:0] = `ALUOP_DEC;
+					alu_inst[3:0] = `ALUOP_INC;
 					write_reg = 1;
 				end
 			end

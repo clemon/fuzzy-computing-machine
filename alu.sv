@@ -42,7 +42,8 @@ always_comb begin
 				end
 			end 
 		`OP_SUB: reg_o = reg1_i - reg2_i;					//0001
-		`OP_SFL: reg_o = reg1_i << reg2_i;					//0010
+		`OP_SFL: begin reg_o = reg1_i << reg2_i;					//0010
+					$display("value: %b shift by %d", reg1_i, reg2_i); end
 		`OP_SFR: reg_o = reg1_i >> reg2_i;					//0011
 		`OP_INC: reg_o = reg1_i + 1;							//0100
 		`OP_DEC: reg_o = reg1_i - 1;							//0101
