@@ -24,6 +24,8 @@
 `define ALUOP_BNE 4'b0110 //Branch not equal
 `define ALUOP_BEQ 4'b0111 //Branch equal
 `define ALUOP_BLT 4'b1000 //Branch less than
+`define ALUOP_LHB 4'b1001 //LHB
+`define ALUOP_JMP 4'b1010 //JMP
 
 module control(
 	input [1:0]format,
@@ -38,9 +40,9 @@ module control(
 reg DEBUG = 1;
 
 always_comb begin
-	write_mem = 1'bx;
-	write_reg = 1'bx;
-	read_mem = 1'bx;
+	write_mem = 1'b0;
+	write_reg = 1'b0;
+	read_mem = 1'b0;
 	alu_inst[3:0] = 4'bxxxx;
 
 	case(opcode)
@@ -92,7 +94,7 @@ always_comb begin
 		`LHB_OP: begin
 				if (DEBUG) $display("control | LOAD HALF BYTE");
 				write_reg = 1;
-				read_mem = 1;
+				alu_inst[3:0] = `ALUOP_LHB;
 			end
 		`MVB_OP: begin
 				if (DEBUG) $display("control | MOVE BACK");
@@ -104,6 +106,7 @@ always_comb begin
 			end
 		`JMP_OP: begin
 				if (DEBUG) $display("control | JUMP");
+				alu_inst[3:0] = `ALUOP_JMP;
 			end
 		`STR_OP: begin
 				if (DEBUG) $display("control | STORE");

@@ -28,7 +28,8 @@ module instr_rom
 		output wire [3:0] opcode,
 		output wire [2:0] reg1_i, reg2_i, reg_o,
 		output wire [2:0] imm,
-		output wire  imm_flag
+		output wire  imm_flag,
+		output reg [15:0] jmpLoc
 	);
 
 	reg [1:0] form;
@@ -36,29 +37,46 @@ module instr_rom
 	reg [2:0] r1i; 
 	reg [2:0] r2i;  
 	reg [2:0] ro;  
+	
+	reg [15:0] jmpLabels [3:0];
+	
 
+	initial begin	
+		jmpLabels[0] = 8'd10;
+		jmpLabels[1] = 8'd20;
+		jmpLabels[2] = 8'd30;
+	end
+	
 	always_comb begin
 
-		// Defaults - Becuase fuck SystemVerilog
-		form  = 2'b00;
-		instr = 8'b00000000;
-		r1i   = 3'b000;
-		r2i   = 3'b000;
-		ro    = 3'b000;
+		// Defaults
+		form  = 2'bxx;
+		instr = 8'bxxxxxxxx;
+		r1i   = 3'bxxx;
+		r2i   = 3'bxxx;
+		ro    = 3'bxxx;
 
 		case (pc)
 			// Program 1
+			0: instr = 8'b00001100; //lb $i3, $o0
+			1: instr = 8'b00011000; //lhb $i2, $o0
+			//2: instr = 8'b00100010; //jmp lol
+			2: instr = 8'b00110111; //str $i1, $o3 (7 in 1)
+			3: instr = 8'b00000001; //lb $i0, $o1
+			/*
 			0: instr = 8'b01000010;	// lim   1, 0 ($i2, reg 2)
 			1: instr = 8'b11010100;	// inc $i2, 0
 			2: instr = 8'b01000011;	// lim   1, 1 ($i3, reg 3)
 			3: instr = 8'b10010100;	// sft $i2, 0 (shift reg 2 by reg 3)
 			4: instr = 8'b01101010;	// mvf $i2, $o2
 			5: instr = 8'b00000000; // lb $i2, $o0
-
+*/
 			// Output: $i2 and $o2 hold value 4
 
 		endcase
 
+		jmpLoc = jmpLabels[instr[3:0]];
+		
 		// Switch on opcode to determine format
 		case (instr[7:4])
 			`LB_OP   : form = `M_FORM;

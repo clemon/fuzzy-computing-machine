@@ -32,7 +32,7 @@ always_comb begin
 		`SFT_OP : muxout = alu_i;
 		`INC_OP : muxout = alu_i;
 		`LB_OP  : muxout = mem_i;
-		`LHB_OP : muxout = mem_i;
+		`LHB_OP : muxout = alu_i;
 		`MVB_OP : muxout = reg_i;
 		`MVF_OP : muxout = reg_i;
 		`LIM_OP : muxout = {5'b00000, rom_i};

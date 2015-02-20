@@ -7,6 +7,8 @@
 `define OP_BNE 4'b0110 //Branch not equal
 `define OP_BEQ 4'b0111 //Branch equal
 `define OP_BLT 4'b1000 //Branch less than
+`define OP_LHB 4'b1001 //LHB
+`define OP_JMP 4'b1010 //JMP
 
 module alu (
 	input [3:0] inst_i,
@@ -37,6 +39,8 @@ always_comb begin
 		`OP_BNE: branch_o = (reg1_i == reg2_i) ? 0 : 1;	//0110
 		`OP_BEQ: branch_o = (reg1_i == reg2_i) ? 1 : 0;	//0111
 		`OP_BLT: branch_o = (reg1_i < reg2_i) ? 1 : 0;	//1000
+		`OP_LHB: reg_o = reg1_i & 8'b11110000;
+		`OP_JMP: branch_o = 1;
 	endcase
 end
 endmodule

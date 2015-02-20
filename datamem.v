@@ -113,7 +113,7 @@ module datamem
 	
 	end 
 
-	always @ (posedge clk)
+	always @ (negedge clk)
 	begin
 		// Write
 		if (writemem)
