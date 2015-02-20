@@ -2,67 +2,37 @@ module testbench();
 
 reg	clk;
 reg	start;
-reg	branchFetch;
 reg	[15:0] branchloc;
 reg	[15:0] start_address;
-wire	currentPC;
 
-wire	[2:0] destinationRegister;
-wire	[2:0] sourceRegister1;
-wire	[2:0] sourceRegister2;
-wire	[3:0] ALUOp;
-wire	[7:0] sR1Data;
-wire	[7:0] sR2Data;
-wire	Immflag;
+wire	[3:0] aluOpCode;
+wire	[7:0] aluOutput;
+wire	branchTaken;
+wire	[7:0] dataMemResult;
+wire	[2:0] Immediate;
+wire	ImmediateFlag;
 wire	[1:0] InstrFormat;
-wire	[3:0] InstrOp;
+wire	[3:0] InstrOpcode;
 wire	[15:0] PC;
-wire	[2:0]	immediateData;
-wire	[7:0] aluOut;
-
-/**
-//Inputs for regfile
-reg [2:0] sourceReg1;
-reg [2:0] sourceReg2;
-reg [2:0] destReg;
-reg writeFlag;
-reg [7:0] dataIn;
-reg clk;
-//Outputs for regfile
-wire [7:0] data1;
-wire [7:0] data2;
-
-//Inputs for ALU
-reg [3:0] aluOp;
-reg [7:0] aluRegIn1;
-reg [7:0] aluRegIn2;
-reg clkFetch;
-//Outputs for ALU
-wire [7:0] aluOut;
-wire aluBranchOut;
-
-//Inputs for fetch
-reg start;
-reg [7:0] start_address;
-reg branchFetch;
-reg [7:0] branchloc;
-//Outputs for fetch
-wire [7:0] nextPC;
-**/
+wire	readMemFlag;
+wire	[7:0] reg1Data;
+wire	[2:0] reg1In;
+wire	[7:0] reg2Data;
+wire	[2:0] reg2In;
+wire	[2:0] regDest;
+wire	[7:0] regFileDataIn;
+wire	writeMemFlag;
+wire	writeRegFlag;
 
 initial begin
 	// Regfile Waveform
 	clk = 1;
-	branchFetch = 0;
 	#5	start_address 	= 16'b0000000000000101;
 	#5;
 	#5	start		= 1;
 	#15 	start		= 0;
 	#30	start		= 1;
 	#30	start 	= 0;
-	#5	branchloc = 10;
-			branchFetch = 1;
-	#15	branchFetch = 0;
 	#10	start = 1;
 	#10	start		= 0;
 			start_address	= 8'b00000000;
@@ -76,59 +46,71 @@ always begin
 end
 
 regfile	b2v_inst(
-	
+	.writeFlag_i(writeRegFlag),
 	.clk(clk),
-	
-	.destReg_i(destinationRegister),
-	.sourceReg1_i(sourceRegister1),
-	.sourceReg2_i(sourceRegister2),
-	.data1_o(sR1Data),
-	.data2_o(sR2Data));
+	.data_i(regFileDataIn),
+	.destReg_i(regDest),
+	.sourceReg1_i(reg1In),
+	.sourceReg2_i(reg2In),
+	.data1_o(reg1Data),
+	.data2_o(reg2Data));
 
 
 alu	b2v_inst1(
-	.inst_i(ALUOp),
-	.reg1_i(sR1Data),
-	.reg2_i(sR2Data)
-	
-	);
+	.inst_i(aluOpCode),
+	.reg1_i(reg1Data),
+	.reg2_i(reg2Data),
+	.branch_o(branchTaken),
+	.reg_o(aluOutput));
 
 
-control	b2v_inst2(
-	.imm_flag(Immflag),
-	.format(InstrFormat),
-	.opcode(InstrOp),
-	.alu_inst(ALUOp));
+mux_reg	b2v_inst2(
+	.alu_i(aluOutput),
+	.mem_i(dataMemResult),
+	.opcode(InstrOpcode),
+	.reg_i(reg1Data),
+	.rom_i(Immediate),
+	.muxout(regFileDataIn));
 
 
 instr_rom	b2v_inst3(
 	.pc(PC),
-	.imm_flag(Immflag),
+	.imm_flag(ImmediateFlag),
 	.format(InstrFormat),
-	
-	.opcode(InstrOp),
-	.reg1_i(sourceRegister1),
-	.reg2_i(sourceRegister2),
-	.reg_o(destinationRegister),
-	.imm(immediateData));
+	.imm(Immediate),
+	.opcode(InstrOpcode),
+	.reg1_i(reg1In),
+	.reg2_i(reg2In),
+	.reg_o(regDest));
 
 
 fetch	b2v_inst4(
 	.clk(clk),
 	.start_i(start),
-	.branch_i(branchFetch),
+	.branch_i(branchTaken),
 	.branchloc_i(branchloc),
 	.start_address_i(start_address),
 	.pc(PC));
 
-datamem	b2v_inst6(
-	
-	
+
+datamem	b2v_inst5(
+	.writemem(writeMemFlag),
+	.readmem(readMemFlag),
 	.clk(clk),
-	.addr(aluOut),
-	.data(sR2Data)
-	
-	);
-	defparam	b2v_inst6.ADDR_WIDTH = 8;
-	
+	.addr(aluOutput),
+	.data(reg2Data),
+	.q(dataMemResult));
+	defparam	b2v_inst5.ADDR_WIDTH = 8;
+
+
+control	b2v_inst7(
+	.imm_flag(ImmediateFlag),
+	.format(InstrFormat),
+	.opcode(InstrOpcode),
+	.write_mem(writeMemFlag),
+	.write_reg(writeRegFlag),
+	.read_mem(readMemFlag),
+	.alu_inst(aluOpCode));
+
+
 endmodule

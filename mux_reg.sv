@@ -21,7 +21,7 @@ module mux_reg(
 	input  [7:0] rom_i,
 	input  [7:0] reg_i,
 	input  [3:0] opcode,
-	output [7:0] muxout
+	output reg [7:0] muxout
 );
 
 always_comb begin

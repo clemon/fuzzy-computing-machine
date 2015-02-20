@@ -31,7 +31,8 @@ module control(
 	input [3:0]opcode,
 	output reg [3:0]alu_inst,
 	output reg write_mem,
-	output reg write_reg
+	output reg write_reg,
+	output reg read_mem
 );
 
 reg DEBUG = 1;
@@ -39,6 +40,7 @@ reg DEBUG = 1;
 always_comb begin
 	write_mem = 0;
 	write_reg = 0;
+	read_mem = 0;
 	alu_inst[3:0] = 4'bxxxx;
 
 	case(opcode)
@@ -84,11 +86,13 @@ always_comb begin
 			end
 		`LB_OP: begin 
 				if (DEBUG) $display("control | LOAD BYTE");
-				write_mem = 1;
+				write_reg = 1;
+				read_mem = 1;
 			end
 		`LHB_OP: begin
 				if (DEBUG) $display("control | LOAD HALF BYTE");
-				write_mem = 1;
+				write_reg = 1;
+				read_mem = 1;
 			end
 		`MVB_OP: begin
 				if (DEBUG) $display("control | MOVE BACK");
