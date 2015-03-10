@@ -56,7 +56,41 @@ module instr_rom
 		jmpLoc = 8'dx;
 
 		case (pc)
-			
+			/*
+			0:  instr = 8'b01000000;
+			1:  instr = 8'b01101001;
+			2:  instr = 8'b01000010;
+			3:  instr = 8'b00001000;
+			4:  instr = 8'b01010100;
+			5:  instr = 8'b01000100;
+			6:  instr = 8'b00001000;
+			7:  instr = 8'b01000000;
+			8:  instr = 8'b11011001;
+			9:  instr = 8'b01000001;
+			10: instr = 8'b11010110;
+			11: instr = 8'b01011010;
+			12: instr = 8'b11011001;
+			13: instr = 8'b10101101;
+			14: instr = 8'b11011010;
+			15: instr = 8'b01000111;
+			16: instr = 8'b00001100;
+			17: instr = 8'b01010100;
+			18: instr = 8'b01101000;
+			19: instr = 8'b01000000;
+			20: instr = 8'b01000001;
+			21: instr = 8'b11011001;
+			22: instr = 8'b11010110;
+			23: instr = 8'b01011010;
+			24: instr = 8'b11011001;
+			25: instr = 8'b10101101;
+			26: instr = 8'b01001011;
+			27: instr = 8'b01101101;
+			28: instr = 8'b00111001;
+			29: instr = 8'b01001001;
+			30: instr = 8'b01101101;
+			31: instr = 8'b01010011;
+			32: instr = 8'b00110001;
+			*/
 			/*
 			0: instr = 8'b01001110; //lim 7, $i2
 			1: instr = 8'b01000101; //lim 2, $i3
@@ -65,7 +99,7 @@ module instr_rom
 			4: instr = 8'b01010000; //mvb $i0, $o0
 			5: instr = 8'b00000011; //lb  $i0, $o3 
 			*/
-			/*
+			
 			0: instr = 8'b01001010; //lim 5, 0
 			1: instr = 8'b01000101; //lim 2, 1
 			2: instr = 8'b10010100; //sft $i2, 0
@@ -101,21 +135,16 @@ module instr_rom
 			32:instr = 8'b01101111; //mvf $i3, $o3
 			33:instr = 8'b11110111; //bls $i1, $o3 (NEXT)	
 			34:instr = 8'b00111010; //str $i2, $o2
-			
-			35:instr = 8'b01010110;
-			36:instr = 8'b00000100;
-			*/
-			/*
 			35:instr = 8'b11011100; //inc $o2, 0
 			36:instr = 8'b00110110; //str $i1, $o2
 			37:instr = 8'b11010000; //NEXT: inc $i0, 0
 			38:instr = 8'b01000000; //lim 0, 0
-			39:instr = 8'b01001101; //lim 7, 1
+			39:instr = 8'b01001111; //lim 7, 1
 			40:instr = 8'b01101111; //mvf $i3, $o3
 			41:instr = 8'b11011110; //inc $o3, 0
 			42:instr = 8'b01000001; //lim 0, 1
 			43:instr = 8'b10111011; //beq $i1, $o3 (BUBBLELOOP)
-			*/
+			
 			
 			/* Testing BLS
 			25:instr = 8'b01001000; //lim 4, 0

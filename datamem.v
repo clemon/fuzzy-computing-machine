@@ -116,6 +116,28 @@ module datamem
 	always @ (negedge clk)
 	begin
 		// Write
+		/*
+		$display("\nram[%d] = %d", 128, $signed(ram[128]));
+		$display("\nram[%d] = %d", 129, $signed(ram[129]));
+		$display("\nram[%d] = %d", 130, $signed(ram[130]));
+		$display("\nram[%d] = %d", 131, $signed(ram[131]));
+		$display("\nram[%d] = %d", 132, $signed(ram[132]));
+		$display("\nram[%d] = %d", 133, $signed(ram[133]));
+		$display("\nram[%d] = %d", 134, $signed(ram[134]));
+		$display("\nram[%d] = %d", 135, $signed(ram[135]));
+		$display("\nram[%d] = %d", 136, $signed(ram[136]));
+		$display("\nram[%d] = %d", 137, $signed(ram[137]));
+		$display("\nram[%d] = %d", 138, $signed(ram[138]));
+		$display("\nram[%d] = %d", 139, $signed(ram[139]));
+		$display("\nram[%d] = %d", 140, $signed(ram[140]));
+		$display("\nram[%d] = %d", 141, $signed(ram[141]));
+		$display("\nram[%d] = %d", 142, $signed(ram[142]));
+		$display("\nram[%d] = %d", 143, $signed(ram[143]));
+		$display("\nram[%d] = %d", 144, $signed(ram[144]));
+		$display("\nram[%d] = %d", 145, $signed(ram[145]));
+		$display("\nram[%d] = %d", 146, $signed(ram[146]));
+		$display("\nram[%d] = %d", 147, $signed(ram[147]));
+		*/
 		if (writemem) begin
 			ram[addr] = data;
 			$display("\nSTORED HAHA %d", data);
