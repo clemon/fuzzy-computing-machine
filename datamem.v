@@ -113,12 +113,12 @@ module datamem
 	
 	end 
 
-	always @ (*)
+	always @ (negedge clk)
 	begin
 		// Write
 		if (writemem) begin
 			ram[addr] = data;
-			$display("\nStoring: %d at %d", data, addr);
+			$display("\nSTORED HAHA %d", data);
 		end
 	end
 

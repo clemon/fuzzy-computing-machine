@@ -119,7 +119,7 @@ datamem	b2v_inst5(
 	.writemem(writeMemFlag),
 	.readmem(readMemFlag),
 	.clk(clk),
-	.addr(reg1Data),
+	.addr(memAddressReadWrite),
 	.data(reg1Data),
 	.q(dataMemResult));
 	defparam	b2v_inst5.ADDR_WIDTH = 8;

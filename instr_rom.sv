@@ -56,7 +56,16 @@ module instr_rom
 		jmpLoc = 8'dx;
 
 		case (pc)
-		
+			
+			/*
+			0: instr = 8'b01001110; //lim 7, $i2
+			1: instr = 8'b01000101; //lim 2, $i3
+			2: instr = 8'b01101100; //mvf $i3,$o0 $o0 = 2
+			3: instr = 8'b00111000; //str $i2,$o0 addr[2] = 7
+			4: instr = 8'b01010000; //mvb $i0, $o0
+			5: instr = 8'b00000011; //lb  $i0, $o3 
+			*/
+			/*
 			0: instr = 8'b01001010; //lim 5, 0
 			1: instr = 8'b01000101; //lim 2, 1
 			2: instr = 8'b10010100; //sft $i2, 0
@@ -95,6 +104,7 @@ module instr_rom
 			
 			35:instr = 8'b01010110;
 			36:instr = 8'b00000100;
+			*/
 			/*
 			35:instr = 8'b11011100; //inc $o2, 0
 			36:instr = 8'b00110110; //str $i1, $o2
