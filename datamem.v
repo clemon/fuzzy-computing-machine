@@ -118,6 +118,7 @@ module datamem
 		// Write
 		if (writemem) begin
 			ram[addr] = data;
+			$display("\nStoring: %d at %d", data, addr);
 		end
 	end
 

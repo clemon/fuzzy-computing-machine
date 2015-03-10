@@ -13,7 +13,7 @@
 `define BLT_OP  4'b1100 	// Branch Less Than
 `define INC_OP  4'b1101 	// Inc/Dec-rement
 `define HALT_OP 4'b1110 	// Halt
-`define TBA_OP  4'b1111 	// TBA
+`define BLS_OP  4'b1111 	// branch less than signed
 
 `define ALUOP_ADD 4'b0000 //Addition
 `define ALUOP_SUB 4'b0001 //Subtract
@@ -26,6 +26,7 @@
 `define ALUOP_BLT 4'b1000 //Branch less than
 `define ALUOP_LHB 4'b1001 //LHB
 `define ALUOP_JMP 4'b1010 //JMP
+`define ALUOP_BLS 4'b1011 //Branch less than signed
 
 module control(
 	input [1:0]format,
@@ -122,8 +123,9 @@ always_comb begin
 				if (DEBUG) $display("control | LOAD IMMEDIATE");
 				write_reg = 1;
 			end
-		`TBA_OP: begin
+		`BLS_OP: begin
 				if (DEBUG) $display("control | TBA");
+				alu_inst[3:0] = `ALUOP_BLS;
 			end
 		`HALT_OP: begin
 				if (DEBUG) $display("control | HALT");

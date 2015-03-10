@@ -18,7 +18,7 @@
 `define BLT_OP  4'b1100 	// Branch Less Than
 `define INC_OP  4'b1101 	// Inc/Dec-rement
 `define HALT_OP 4'b1110 	// Halt
-`define TBA_OP  4'b1111 	// TBA
+`define BLS_OP  4'b1111 	// Branch less than signed
 
 // How 2 computer
 module instr_rom
@@ -56,6 +56,65 @@ module instr_rom
 		jmpLoc = 8'dx;
 
 		case (pc)
+		
+			0: instr = 8'b01001010; //lim 5, 0
+			1: instr = 8'b01000101; //lim 2, 1
+			2: instr = 8'b10010100; //sft $i2, 0
+			3: instr = 8'b01101000; //mvf $i2, $o0		//$o0 = 20
+			4: instr = 8'b01001000; //lim 4, 0
+			5: instr = 8'b01001011; //lim 5, 1
+			6: instr = 8'b10010100; //sft $i2, 0 
+			7: instr = 8'b01101001; //mvf $i2, $o1		//$o1 = 128
+			8: instr = 8'b11011001; //LOOP: inc $o0, 1 //$o0 = 19
+			9: instr = 8'b01010100; //mvb $i1, $o0		//$i1 holds sort-check var
+			10:instr = 8'b01000000; //lim 0, 0
+			11:instr = 8'b01101010; //mvf $i2, $o2
+			12:instr = 8'b01010010; //mvb $i0, $o2		//$i0 = 0, used for bubble index
+			13:instr = 8'b01001010; //lim 5, 0    		//BRANCH ADDRESS, BREAKLOOP
+			14:instr = 8'b01101010; //mvf $i2, $o2		//move branch address into $o2
+			15:instr = 8'b10110010; //beq $i0, $o2		//if sort loop has run 19 times, terminate
+			16:instr = 8'b01010100; //BUBBLELOOP: mvb $i1, $o0		//$i1 = sortcheck index
+			17:instr = 8'b01001100; //lim 6, 0			//BRANCH ADDRESS, LOOP
+			18:instr = 8'b01101010; //mvf $i2, $o2
+			19:instr = 8'b10110010; //beq $i0, $o2 (LOOP)		//If done with current bubble run, start next iteration
+			20:instr = 8'b01010101; //mvb $i1, $o1		//Set up to load mem loc of first index of bubble
+			21:instr = 8'b01110010; //add $i0, $o2		//$o2 = address of beginning of bubble
+			22:instr = 8'b01010110; //mvb $i1, $o2
+			23:instr = 8'b00000111; //lb  $i1, $o3
+			24:instr = 8'b01010111; //mvb $i1, $o3		//$i1 = array[index beginning of bubble]
+			25:instr = 8'b01000011; //lim 1, 1
+			26:instr = 8'b01011010; //mvb $i2, $o2		//Get address of previous index
+			27:instr = 8'b01111011; //add $i2, $o3		//$o3 = address of end of bubble
+			28:instr = 8'b01011111; //mvb $i3, $o3
+			29:instr = 8'b00001111; //lb  $i3, $o3
+			30:instr = 8'b01011011; //mvb $i2, $o3		//$i2 = array[index end of bubble]
+			31:instr = 8'b01001111; //lim 7, 1			//ADDRESS LABEL FOR NEXT
+			32:instr = 8'b01101111; //mvf $i3, $o3
+			33:instr = 8'b11110111; //bls $i1, $o3 (NEXT)	
+			34:instr = 8'b00111010; //str $i2, $o2
+			
+			35:instr = 8'b01010110;
+			36:instr = 8'b00000100;
+			/*
+			35:instr = 8'b11011100; //inc $o2, 0
+			36:instr = 8'b00110110; //str $i1, $o2
+			37:instr = 8'b11010000; //NEXT: inc $i0, 0
+			38:instr = 8'b01000000; //lim 0, 0
+			39:instr = 8'b01001101; //lim 7, 1
+			40:instr = 8'b01101111; //mvf $i3, $o3
+			41:instr = 8'b11011110; //inc $o3, 0
+			42:instr = 8'b01000001; //lim 0, 1
+			43:instr = 8'b10111011; //beq $i1, $o3 (BUBBLELOOP)
+			*/
+			
+			/* Testing BLS
+			25:instr = 8'b01001000; //lim 4, 0
+			26:instr = 8'b01001011; //lim 5, 1
+			27:instr = 8'b10010100; //sft $i2, 0
+			28:instr = 8'b01000001; //lim 0, 1
+			29:instr = 8'b11111001; //bls $i2, $o1
+			*/
+		/*
 			// Product
 			0: instr = 8'b01000000;
 			1: instr = 8'b01101001;
@@ -180,19 +239,19 @@ module instr_rom
 
 			//match:
 			118: instr= 8'b01000100;
-			119: instr= 8'b01101000;
+			119: instr= 8'b01101001;
 
 			120: instr= 8'b11011110;
 			121: instr= 8'b01000011;
 			122: instr= 8'b01101100;
-			123: instr= 8'b10111100;
+			123: instr= 8'b10111101;
 
 			//finish:
 			124: instr= 8'b01010011;
 			125: instr= 8'b01001111;
 			126: instr= 8'b01101111;
 			127: instr= 8'b00110011;
-			
+			*/
 	
 		endcase
 		
@@ -213,7 +272,7 @@ module instr_rom
 			`BLT_OP  : form = `M_FORM;
 			`INC_OP  : form = `I_FORM;
 			`HALT_OP : form = `X_FORM;
-			`TBA_OP  : form = `X_FORM;
+			`BLS_OP  : form = `M_FORM;
 		endcase
 		
 		if (form == `C_FORM)
