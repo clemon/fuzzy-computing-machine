@@ -1,0 +1,112 @@
+	lim	6, 0		# $i2 ← 6
+	lb	$i2, $o0	# o0 ← value of &6 (4bit thing)
+	mvb	$i2, $o0	# $i2 ← o0 (4bit thing)
+	lim	4, 1		# $i3 ← 4
+	sft	$i2, 0 		# $i2(4bit thing) << $i3(4)
+	mvf	$i2, $o2	# 4bit thing $o2   xxxx0000
+
+	lim	7, 0		# $i2 ← 7
+	lim	7, 1		# $i3 ← 7
+	inc	$i2, 0
+	inc 	$i3, 0
+	add	$i2, $o3	# $o3 ← $i2 (8) + $i3 (8)
+	mvb	$i2, $o3	# $i2 ← $o3 (16)
+	add	$i2, $o3	# $o3 ← $i2 (16) + $i3 (8)
+	mvb	$i2, $o3	# $i2 ← $o3 (24)
+	add	$i2, $o3	# $o3 ← $i2 (24) + $i3 (8)
+	mvb	$i2, $o3	# $i2 ← $o3 (32)
+	inc 	$i2, 1 		# $i2 = 31
+	mvf	$i2, $o1	# $o1 ← 31
+
+	lim	7, 1 		# $i3 <- 7
+	inc 	$i3, 0
+	mvf	$i3, $o0	# $o0 <- $i3 (8)
+	str	$i2, $o0	# mem address 8 = array address (initially 31)
+
+	lim 	0, 1		# $i3 ← 0
+	mvf	$i3, $o3	# $o3 match count
+	mvb	$i0, $o3	# $i0 loop count
+	mvb	$i1, $o3	# $i1 inner loop count
+
+loop:	
+	lim	7, 0
+	inc 	$i2, 0		
+	lim	3, 1	
+	sft	$i2, 0			# 8 << 3 = 64
+	lim	1, 1
+	add	$i2, $o1		# $o1 = 65
+
+	mvb	$i1, $o1		# $i1 ← 65
+
+	lim 	5, 0
+	mvf 	$i2, $o1
+
+	beq	$i0, $o1		# if (loop count == 65): finish
+	inc	$i0, 0			# loop count++ 
+	mvf	$i1, $o1		# $o1 ← 65
+
+	lim 	7, 0			# $i2 ← 7
+	inc 	$i2, 0			
+	mvf	$i2, $o1		# $o1 <- $i2
+	lb	$i2, $o0		# $o0 ← mem address 8 (array address)
+	mvb	$i3, $o0		# $i3 ← $o0 (array address)
+	inc	$i3, 0			# array address++
+	str 	$i3, $o1		# store array address into mem address 8
+	mvf	$i3, $o0		# $o0 <- $i3
+
+	lim	0, 1
+	mvf	$i3, $o1
+	mvb	$i1, $o1		# $i1 inner loop count = 0
+
+	mvb	$i3, $o0		# $i3 ← array address
+	lb	$i3, $o1		# $o1 ← array element
+
+innerLoop:
+	lim 	2, 0
+	mvf 	$i2, $o0
+
+	lim	7, 0		# $i2 <- 7
+	inc 	$i2, 0
+	beq	$i1, $o0	# if (innerloop count == 8): loop
+
+	mvb	$i3, $o1	# $i3 <- array element
+	lhb	$i3, $o0	# $o0 <- array element chunk
+
+	mvb	$i3, $o2	# $i3 ← 4bit thing
+	mvb $i2, $o1	# $o1 = $o1 (array elem)
+	mvf $i2, $o2 	# $o2 = $i2 (array elem)
+
+	lim 	4, 0
+	mvf 	$i2, $o1
+
+	beq	$i3, $o1	# if($i3(4bit thing)==$o0(array elem chunk)): match
+
+	mvb 	$i2, $o2		# $i2 <- $o2 (array elem)
+	mvf		$i3, $o2		# o2 = 4bit thing
+	lim 	1, 1 		# $i3 <- 1
+	sft 	$i2, 0		# $i2 (array elem) << $i3 (1)
+	mvf		$i2, $o1		# $o1 <- $i2 (array elem)
+
+	inc	$i1, 0		# innerloop count++
+
+	lim 3, 1
+	mvf $i3, $o0
+	beq $i3, $o0    # jmp innerloop
+
+match:
+	lim 	2, 0
+	mvf 	$i2, $o1
+
+	mvb 	$i2, $o2		# $i2 <- $o2 (array elem)
+	mvf		$i3, $o2		# o2 = 4bit thing
+
+	inc	$o3, 0		# match count++
+	lim	1, 1
+	mvf	$i3, $o0
+	beq	$i3, $o1	# jump to loop
+
+finish:
+	mvb	$i0, $o3
+	lim	7, 1
+	mvf	$i3, $o3
+	str	$i0, $o3	# store match count in mem address 7
