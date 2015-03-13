@@ -1,0 +1,110 @@
+// Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, the Altera Quartus II License Agreement,
+// the Altera MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Altera and sold by Altera or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// PROGRAM		"Quartus II 64-Bit"
+// VERSION		"Version 14.1.0 Build 186 12/03/2014 SJ Web Edition"
+// CREATED		"Thu Feb 19 18:40:01 2015"
+
+module Lab2(
+	clk,
+	start,
+	branchloc,
+	start_address,
+	currentPC
+);
+
+
+input wire	clk;
+input wire	start;
+input wire	[15:0] branchloc;
+input wire	[15:0] start_address;
+output wire	currentPC;
+
+wire	SYNTHESIZED_WIRE_0;
+wire	[2:0] SYNTHESIZED_WIRE_1;
+wire	[2:0] SYNTHESIZED_WIRE_2;
+wire	[2:0] SYNTHESIZED_WIRE_3;
+wire	[3:0] SYNTHESIZED_WIRE_4;
+wire	[7:0] SYNTHESIZED_WIRE_5;
+wire	[7:0] SYNTHESIZED_WIRE_14;
+wire	SYNTHESIZED_WIRE_7;
+wire	[1:0] SYNTHESIZED_WIRE_8;
+wire	[3:0] SYNTHESIZED_WIRE_9;
+wire	[15:0] SYNTHESIZED_WIRE_10;
+wire	SYNTHESIZED_WIRE_11;
+wire	[7:0] SYNTHESIZED_WIRE_12;
+
+
+
+
+
+regfile	b2v_inst(
+	.writeFlag_i(SYNTHESIZED_WIRE_0),
+	.clk(clk),
+	
+	.destReg_i(SYNTHESIZED_WIRE_1),
+	.sourceReg1_i(SYNTHESIZED_WIRE_2),
+	.sourceReg2_i(SYNTHESIZED_WIRE_3),
+	.data1_o(SYNTHESIZED_WIRE_5),
+	.data2_o(SYNTHESIZED_WIRE_14));
+
+
+alu	b2v_inst1(
+	.inst_i(SYNTHESIZED_WIRE_4),
+	.reg1_i(SYNTHESIZED_WIRE_5),
+	.reg2_i(SYNTHESIZED_WIRE_14),
+	.branch_o(SYNTHESIZED_WIRE_11),
+	.reg_o(SYNTHESIZED_WIRE_12));
+
+
+control	b2v_inst2(
+	.imm_flag(SYNTHESIZED_WIRE_7),
+	.format(SYNTHESIZED_WIRE_8),
+	.opcode(SYNTHESIZED_WIRE_9),
+	.write_flag(SYNTHESIZED_WIRE_0),
+	.alu_inst(SYNTHESIZED_WIRE_4));
+
+
+instr_rom	b2v_inst3(
+	.pc(SYNTHESIZED_WIRE_10),
+	.imm_flag(SYNTHESIZED_WIRE_7),
+	.format(SYNTHESIZED_WIRE_8),
+	
+	.opcode(SYNTHESIZED_WIRE_9),
+	.reg1_i(SYNTHESIZED_WIRE_2),
+	.reg2_i(SYNTHESIZED_WIRE_3),
+	.reg_o(SYNTHESIZED_WIRE_1));
+
+
+fetch	b2v_inst4(
+	.clk(clk),
+	.start_i(start),
+	.branch_i(SYNTHESIZED_WIRE_11),
+	.branchloc_i(branchloc),
+	.start_address_i(start_address),
+	.pc(SYNTHESIZED_WIRE_10));
+
+
+single_port_ram_with_init	b2v_inst6(
+	
+	
+	.clk(clk),
+	.addr(SYNTHESIZED_WIRE_12),
+	.data(SYNTHESIZED_WIRE_14)
+	);
+	defparam	b2v_inst6.ADDR_WIDTH = 8;
+
+
+endmodule

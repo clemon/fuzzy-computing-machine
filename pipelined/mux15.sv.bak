@@ -1,0 +1,16 @@
+module mux15(
+	input [15:0] input1,
+	input [15:0] input2,
+	input sel,
+	output reg [15:0] muxout
+);
+
+always_comb begin
+
+	if(sel)
+		muxout = input2;
+	else
+		muxout = input1;
+		
+end
+endmodule

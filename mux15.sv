@@ -14,9 +14,12 @@ reg [15:0] jmpLabels [15:0];
 		jmpLabels[3] = 8'd101;
 		jmpLabels[4] = 8'd118;
 		jmpLabels[5] = 8'd124;
-		jmpLabels[6] = 8'd8;
-		jmpLabels[7] = 8'd37;
-		jmpLabels[8] = 8'd16;
+		jmpLabels[6] = 8'd8; //LOOP
+		jmpLabels[7] = 8'd39; //NEXT
+		jmpLabels[8] = 8'd18; //BUBBLELOOP
+		jmpLabels[9] = 8'd46; //BREAKLOOP
+		jmpLabels[10]= 8'd83; //ENDPAIRCHECK
+		jmpLabels[11]= 8'd60; //PAIRLOOP
 	end
 
 always_comb begin

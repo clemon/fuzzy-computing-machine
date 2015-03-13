@@ -138,6 +138,7 @@ module datamem
 		$display("\nram[%d] = %d", 146, $signed(ram[146]));
 		$display("\nram[%d] = %d", 147, $signed(ram[147]));
 		*/
+		$display("\nram[%d] = %d", 127, $signed(ram[127]));
 		if (writemem) begin
 			ram[addr] = data;
 			$display("\nSTORED HAHA %d", data);
