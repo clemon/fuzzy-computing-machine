@@ -1,4 +1,5 @@
 module MEM_WB(
+		input clk,
 		input [7:0] data1_i,
 		input [7:0] alu_reg_i,
 		input writeReg_i,

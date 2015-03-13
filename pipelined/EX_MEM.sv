@@ -19,6 +19,8 @@ module EX_MEM(
 	input [3:0] opcode_i,
 	input [2:0] imm_i,
 	
+	input [7:0] dataD_i,
+	
 	output wire write_mem_o,
 	output wire write_reg_o,
 	output wire read_mem_o,
@@ -28,7 +30,9 @@ module EX_MEM(
 	output wire [2:0] reg1_o,
 	output wire [2:0] reg2_o,
 	output wire [3:0] opcode_o,
-	output wire [2:0] imm_o
+	output wire [2:0] imm_o,
+	
+	output wire [7:0] dataD_o
 );
 
 always_ff @ (posedge clk) begin
@@ -42,6 +46,7 @@ always_ff @ (posedge clk) begin
 	reg2_o <= reg2_i;
 	opcode_o <= opcode_i;
 	imm_o <= imm_i;
+	dataD_o <= dataD_i;
 end
 
 endmodule

@@ -1,4 +1,5 @@
 module IF_ID(
+		input clk,
 		input [1:0] format_i,
 		input [3:0] opcode_i,
 		input [2:0] reg1_i, reg2_i, regD_i,
