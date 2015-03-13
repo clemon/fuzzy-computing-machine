@@ -109,8 +109,8 @@ fetch	b2v_inst(
 mux7	b2v_inst1(
 	.aluOut_i(aluOutput),
 	.data1_i(IDEX_dataReg1),
-	.data1EX_i(EXMEM_dataReg1),
-	.data1ME_i(MEMWB_dataReg1),
+	.data1EX_i(exDat),
+	.data1ME_i(regFileDataIn),
 	.forwardFlag(forwardFlag),
 	.imm_i(IDEX_imm),
 	.immEX_i(EXMEM_imm),
@@ -147,8 +147,8 @@ mux_reg	b2v_inst15(
 
 mux3	b2v_inst16(
 	.input1(IDEX_dataReg1),
-	.input2(exDat),
-	.input3(regFileDataIn),
+	.input2(regFileDataIn),
+	.input3(MEMWB_aluOutput),
 	.sel(forwardFlag),
 	.muxout(reg1Final));
 
@@ -156,7 +156,7 @@ mux3	b2v_inst16(
 mux3	b2v_inst17(
 	.input1(IDEX_dataReg2),
 	.input2(exDat),
-	.input3(regFileDataIn),
+	.input3(MEMWB_aluOutput),
 	.sel(forwardFlag),
 	.muxout(reg2Final));
 

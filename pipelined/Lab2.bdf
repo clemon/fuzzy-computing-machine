@@ -1455,7 +1455,7 @@ agreement for further details.
 		(pt 192 32)
 		(output)
 		(text "muxout[7..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "muxout[7..0]" (rect 119 27 181 39)(font "Arial" ))
+		(text "muxout[7..0]" (rect 119 27 171 39)(font "Arial" ))
 		(line (pt 192 32)(pt 176 32)(line_width 3))
 	)
 	(drawing
@@ -1464,8 +1464,8 @@ agreement for further details.
 )
 (symbol
 	(rect 1248 -72 1440 40)
-	(text "mux3" (rect 5 0 32 12)(font "Arial" ))
-	(text "inst17" (rect 8 96 37 108)(font "Arial" ))
+	(text "mux4" (rect 5 0 32 12)(font "Arial" ))
+	(text "inst" (rect 8 96 25 108)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -1541,8 +1541,22 @@ agreement for further details.
 		(pt 256 32)
 		(output)
 		(text "forwardSelect[1..0]" (rect 0 0 93 12)(font "Arial" ))
-		(text "forwardSelect[1..0]" (rect 157 27 250 39)(font "Arial" ))
+		(text "forwardSelect[1..0]" (rect 157 27 235 39)(font "Arial" ))
 		(line (pt 256 32)(pt 240 32)(line_width 3))
+	)
+	(port
+		(pt 256 48)
+		(output)
+		(text "forwardReg1[1..0]" (rect 0 0 88 12)(font "Arial" ))
+		(text "forwardReg1[1..0]" (rect 161 43 235 55)(font "Arial" ))
+		(line (pt 256 48)(pt 240 48)(line_width 3))
+	)
+	(port
+		(pt 256 64)
+		(output)
+		(text "forwardReg2[1..0]" (rect 0 0 88 12)(font "Arial" ))
+		(text "forwardReg2[1..0]" (rect 161 59 235 71)(font "Arial" ))
+		(line (pt 256 64)(pt 240 64)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 240 96))
@@ -1716,11 +1730,6 @@ agreement for further details.
 (connector
 	(pt 1344 216)
 	(pt 1360 216)
-	(bus)
-)
-(connector
-	(pt 1360 216)
-	(pt 1360 104)
 	(bus)
 )
 (connector
@@ -1939,31 +1948,9 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1688 560)
-	(pt 1688 120)
-	(bus)
-)
-(connector
 	(text "branchTakenFlag" (rect -398 592 -315 604)(font "Arial" ))
 	(pt -400 608)
 	(pt 1736 608)
-)
-(connector
-	(pt 1664 136)
-	(pt 1736 136)
-)
-(connector
-	(pt 1736 608)
-	(pt 1736 136)
-)
-(connector
-	(pt 1704 576)
-	(pt 1704 152)
-)
-(connector
-	(text "overflowFlag" (rect 1677 136 1740 148)(font "Arial" ))
-	(pt 1664 152)
-	(pt 1704 152)
 )
 (connector
 	(text "IDEX_writeMemFlag" (rect 1416 216 1513 228)(font "Arial" ))
@@ -1984,11 +1971,6 @@ agreement for further details.
 	(text "IFID_immFlag" (rect 556 344 626 356)(font "Arial" ))
 	(pt 544 360)
 	(pt 576 360)
-)
-(connector
-	(pt 1720 104)
-	(pt 1720 312)
-	(bus)
 )
 (connector
 	(pt 1720 464)
@@ -2190,12 +2172,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(text "IDEX_aluOp[3..0]" (rect 1380 88 1464 100)(font "Arial" ))
-	(pt 1360 104)
-	(pt 1472 104)
-	(bus)
-)
-(connector
 	(text "IDEX_dataDestReg[7..0]" (rect 1411 296 1532 308)(font "Arial" ))
 	(pt 1344 312)
 	(pt 1424 312)
@@ -2217,18 +2193,6 @@ agreement for further details.
 	(text "IDEX_imm[2..0]" (rect 1492 480 1569 492)(font "Arial" ))
 	(pt 1392 496)
 	(pt 1784 496)
-	(bus)
-)
-(connector
-	(text "aluOutput[7..0]" (rect 1680 88 1753 100)(font "Arial" ))
-	(pt 1664 104)
-	(pt 1720 104)
-	(bus)
-)
-(connector
-	(text "overflowOutput[7..0]" (rect 1674 104 1775 116)(font "Arial" ))
-	(pt 1664 120)
-	(pt 1688 120)
 	(bus)
 )
 (connector
@@ -2512,16 +2476,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1712 312)
-	(pt 1720 312)
-	(bus)
-)
-(connector
-	(pt 1720 312)
-	(pt 1816 312)
-	(bus)
-)
-(connector
 	(pt 1816 408)
 	(pt 1808 408)
 	(bus)
@@ -2719,12 +2673,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(text "exDat[7..0]" (rect 2057 512 2112 524)(font "Arial" ))
-	(pt 2480 528)
-	(pt 2032 528)
-	(bus)
-)
-(connector
 	(text "meIn[7..0]" (rect 2692 512 2742 524)(font "Arial" ))
 	(pt 2672 528)
 	(pt 2760 528)
@@ -2789,27 +2737,6 @@ agreement for further details.
 (connector
 	(pt 632 624)
 	(pt 2992 624)
-	(bus)
-)
-(connector
-	(pt 2056 944)
-	(pt 2056 264)
-	(bus)
-)
-(connector
-	(pt 2032 264)
-	(pt 2056 264)
-	(bus)
-)
-(connector
-	(text "EXMEM_dataReg1[7..0]" (rect 2058 248 2173 260)(font "Arial" ))
-	(pt 2056 264)
-	(pt 2160 264)
-	(bus)
-)
-(connector
-	(pt 1464 944)
-	(pt 2056 944)
 	(bus)
 )
 (connector
@@ -2914,26 +2841,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1464 -160)
-	(pt 1464 120)
-	(bus)
-)
-(connector
-	(pt 1448 -40)
-	(pt 1448 136)
-	(bus)
-)
-(connector
-	(pt 1448 136)
-	(pt 1472 136)
-	(bus)
-)
-(connector
-	(pt 1464 120)
-	(pt 1472 120)
-	(bus)
-)
-(connector
 	(pt 1248 -24)
 	(pt 1224 -24)
 	(bus)
@@ -3021,21 +2928,11 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1248 -112)
-	(pt 1240 -112)
-	(bus)
-)
-(connector
 	(pt 1248 8)
 	(pt 1240 8)
 	(bus)
 )
 (connector
-	(pt 1240 -112)
-	(pt 1240 8)
-	(bus)
-)
-(connector
 	(pt 1240 8)
 	(pt 1240 112)
 	(bus)
@@ -3043,16 +2940,6 @@ agreement for further details.
 (connector
 	(pt 1440 112)
 	(pt 1240 112)
-	(bus)
-)
-(connector
-	(pt 1520 736)
-	(pt 1440 736)
-	(bus)
-)
-(connector
-	(pt 1440 736)
-	(pt 1440 112)
 	(bus)
 )
 (connector
@@ -3131,6 +3018,126 @@ agreement for further details.
 	(bus)
 )
 (connector
+	(pt 1360 216)
+	(pt 1360 104)
+	(bus)
+)
+(connector
+	(pt 1688 560)
+	(pt 1688 120)
+	(bus)
+)
+(connector
+	(pt 1736 136)
+	(pt 1664 136)
+)
+(connector
+	(pt 1736 608)
+	(pt 1736 136)
+)
+(connector
+	(pt 1704 576)
+	(pt 1704 152)
+)
+(connector
+	(text "overflowFlag" (rect 1677 136 1740 148)(font "Arial" ))
+	(pt 1704 152)
+	(pt 1664 152)
+)
+(connector
+	(pt 1720 312)
+	(pt 1720 104)
+	(bus)
+)
+(connector
+	(text "IDEX_aluOp[3..0]" (rect 1380 88 1464 100)(font "Arial" ))
+	(pt 1360 104)
+	(pt 1472 104)
+	(bus)
+)
+(connector
+	(text "aluOutput[7..0]" (rect 1680 88 1753 100)(font "Arial" ))
+	(pt 1720 104)
+	(pt 1664 104)
+	(bus)
+)
+(connector
+	(text "overflowOutput[7..0]" (rect 1674 104 1775 116)(font "Arial" ))
+	(pt 1688 120)
+	(pt 1664 120)
+	(bus)
+)
+(connector
+	(pt 1464 -160)
+	(pt 1464 120)
+	(bus)
+)
+(connector
+	(pt 1448 -40)
+	(pt 1448 136)
+	(bus)
+)
+(connector
+	(pt 1448 136)
+	(pt 1472 136)
+	(bus)
+)
+(connector
+	(pt 1464 120)
+	(pt 1472 120)
+	(bus)
+)
+(connector
+	(pt 1712 312)
+	(pt 1720 312)
+	(bus)
+)
+(connector
+	(pt 1720 312)
+	(pt 1816 312)
+	(bus)
+)
+(connector
+	(pt 1424 984)
+	(pt 1424 536)
+	(bus)
+)
+(connector
+	(pt 1424 536)
+	(pt 1448 536)
+	(bus)
+)
+(connector
+	(pt 1448 536)
+	(pt 1448 152)
+	(bus)
+)
+(connector
+	(pt 1448 152)
+	(pt 1416 152)
+	(bus)
+)
+(connector
+	(pt 1416 152)
+	(pt 1416 88)
+	(bus)
+)
+(connector
+	(pt 1416 88)
+	(pt 1160 88)
+	(bus)
+)
+(connector
+	(pt 1160 -112)
+	(pt 1160 88)
+	(bus)
+)
+(connector
+	(pt 1160 -112)
+	(pt 1248 -112)
+	(bus)
+)
+(connector
 	(pt 1360 1040)
 	(pt 1496 1040)
 	(bus)
@@ -3161,9 +3168,8 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(text "forwardFlag[1..0]" (rect 1766 981 1778 1064)(font "Arial" )(vertical))
-	(pt 1760 912)
-	(pt 1760 1024)
+	(pt 1376 1024)
+	(pt 1496 1024)
 	(bus)
 )
 (connector
@@ -3177,11 +3183,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1496 1024)
-	(pt 1376 1024)
-	(bus)
-)
-(connector
 	(pt 1376 328)
 	(pt 1376 464)
 	(bus)
@@ -3189,6 +3190,47 @@ agreement for further details.
 (connector
 	(pt 1376 464)
 	(pt 1376 1024)
+	(bus)
+)
+(connector
+	(pt 1752 1040)
+	(pt 1824 1040)
+	(bus)
+)
+(connector
+	(pt 1440 112)
+	(pt 1440 992)
+	(bus)
+)
+(connector
+	(pt 1760 992)
+	(pt 1440 992)
+	(bus)
+)
+(connector
+	(pt 1760 912)
+	(pt 1760 992)
+	(bus)
+)
+(connector
+	(text "forwardFlag[1..0]" (rect 1766 981 1778 1064)(font "Arial" )(vertical))
+	(pt 1760 992)
+	(pt 1760 1024)
+	(bus)
+)
+(connector
+	(pt 1424 984)
+	(pt 1776 984)
+	(bus)
+)
+(connector
+	(pt 1752 1056)
+	(pt 1776 1056)
+	(bus)
+)
+(connector
+	(pt 1776 984)
+	(pt 1776 1056)
 	(bus)
 )
 (connector
@@ -3229,16 +3271,6 @@ agreement for further details.
 (connector
 	(pt 1488 840)
 	(pt 1528 840)
-	(bus)
-)
-(connector
-	(pt 1464 944)
-	(pt 1464 824)
-	(bus)
-)
-(connector
-	(pt 1464 824)
-	(pt 1528 824)
 	(bus)
 )
 (connector
@@ -3283,6 +3315,11 @@ agreement for further details.
 	(bus)
 )
 (connector
+	(pt 1520 912)
+	(pt 1520 856)
+	(bus)
+)
+(connector
 	(pt 1344 376)
 	(pt 1368 376)
 	(bus)
@@ -3304,16 +3341,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1520 736)
-	(pt 1520 856)
-	(bus)
-)
-(connector
-	(pt 1520 856)
-	(pt 1520 912)
-	(bus)
-)
-(connector
 	(pt 1392 392)
 	(pt 1392 496)
 	(bus)
@@ -3321,6 +3348,43 @@ agreement for further details.
 (connector
 	(pt 1392 496)
 	(pt 1392 744)
+	(bus)
+)
+(connector
+	(pt 1528 824)
+	(pt 1464 824)
+	(bus)
+)
+(connector
+	(pt 1464 824)
+	(pt 1464 944)
+	(bus)
+)
+(connector
+	(text "EXMEM_dataReg1[7..0]" (rect 2058 248 2173 260)(font "Arial" ))
+	(pt 2032 264)
+	(pt 2160 264)
+	(bus)
+)
+(connector
+	(pt 2064 944)
+	(pt 1464 944)
+	(bus)
+)
+(connector
+	(pt 2064 944)
+	(pt 2064 528)
+	(bus)
+)
+(connector
+	(pt 2480 528)
+	(pt 2064 528)
+	(bus)
+)
+(connector
+	(text "exDat[7..0]" (rect 2057 512 2112 524)(font "Arial" ))
+	(pt 2064 528)
+	(pt 2032 528)
 	(bus)
 )
 (junction (pt -360 280))
@@ -3346,7 +3410,6 @@ agreement for further details.
 (junction (pt 1720 312))
 (junction (pt 2456 264))
 (junction (pt 2208 312))
-(junction (pt 2056 264))
 (junction (pt 3048 312))
 (junction (pt 2152 448))
 (junction (pt 1376 464))
@@ -3357,6 +3420,6 @@ agreement for further details.
 (junction (pt 1224 -144))
 (junction (pt 1240 -128))
 (junction (pt 3000 216))
-(junction (pt 1240 8))
-(junction (pt 1520 856))
 (junction (pt 3024 200))
+(junction (pt 1760 992))
+(junction (pt 2064 528))

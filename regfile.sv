@@ -51,7 +51,7 @@ begin
 	begin
 		registers[destReg_i] <= data_i;
 
-		if (overFlag_i == 1) registers[7] <= over_i;
+		if (overFlag_i == 1) registers[0] <= registers[0] + over_i;
 	end
 end
 
