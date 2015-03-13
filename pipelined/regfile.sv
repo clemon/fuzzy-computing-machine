@@ -7,6 +7,7 @@ module regfile(
 	input [7:0] data_i,
 	input [7:0] over_i,
 	input clk,
+	input [2:0] writeReg_i,
 	output reg [7:0] data1_o,
 	output reg [7:0] data2_o,
 	output reg [7:0] dataD_o,
@@ -49,9 +50,9 @@ always_ff @ (negedge clk)
 begin
 	if (writeFlag_i == 1)
 	begin
-		registers[destReg_i] <= data_i;
+		registers[writeReg_i] <= data_i;
 
-		if (overFlag_i == 1) registers[7] <= over_i;
+		if (overFlag_i == 1) registers[0] <= registers[0] + over_i;
 	end
 end
 

@@ -81,6 +81,13 @@ agreement for further details.
 		(line (pt 0 144)(pt 16 144)(line_width 1))
 	)
 	(port
+		(pt 0 160)
+		(input)
+		(text "writeReg_i[2..0]" (rect 0 0 62 12)(font "Arial" ))
+		(text "writeReg_i[2..0]" (rect 21 155 83 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 3))
+	)
+	(port
 		(pt 232 32)
 		(output)
 		(text "data1_o[7..0]" (rect 0 0 50 12)(font "Arial" ))

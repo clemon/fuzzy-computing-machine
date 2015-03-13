@@ -1,5 +1,5 @@
 Fitter report for Lab2
-Thu Mar 12 22:17:08 2015
+Fri Mar 13 00:17:18 2015
 Quartus II 64-Bit Version 14.1.0 Build 186 12/03/2014 SJ Web Edition
 
 
@@ -58,7 +58,7 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Fitter Summary                                                                  ;
 +------------------------------------+--------------------------------------------+
-; Fitter Status                      ; Successful - Thu Mar 12 22:17:08 2015      ;
+; Fitter Status                      ; Successful - Fri Mar 13 00:17:18 2015      ;
 ; Quartus II 64-Bit Version          ; 14.1.0 Build 186 12/03/2014 SJ Web Edition ;
 ; Revision Name                      ; Lab2                                       ;
 ; Top-level Entity Name              ; Lab2                                       ;
@@ -157,40 +157,40 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------+-------------------------------+
 ; clk               ; Incomplete set of assignments ;
 ; start             ; Incomplete set of assignments ;
-; start_address[15] ; Incomplete set of assignments ;
-; start_address[14] ; Incomplete set of assignments ;
-; start_address[13] ; Incomplete set of assignments ;
-; start_address[12] ; Incomplete set of assignments ;
-; start_address[11] ; Incomplete set of assignments ;
-; start_address[10] ; Incomplete set of assignments ;
-; start_address[9]  ; Incomplete set of assignments ;
-; start_address[8]  ; Incomplete set of assignments ;
-; start_address[7]  ; Incomplete set of assignments ;
-; start_address[6]  ; Incomplete set of assignments ;
-; start_address[5]  ; Incomplete set of assignments ;
-; start_address[4]  ; Incomplete set of assignments ;
-; start_address[3]  ; Incomplete set of assignments ;
-; start_address[2]  ; Incomplete set of assignments ;
-; start_address[1]  ; Incomplete set of assignments ;
 ; start_address[0]  ; Incomplete set of assignments ;
+; start_address[1]  ; Incomplete set of assignments ;
+; start_address[2]  ; Incomplete set of assignments ;
+; start_address[3]  ; Incomplete set of assignments ;
+; start_address[4]  ; Incomplete set of assignments ;
+; start_address[5]  ; Incomplete set of assignments ;
+; start_address[6]  ; Incomplete set of assignments ;
+; start_address[7]  ; Incomplete set of assignments ;
+; start_address[8]  ; Incomplete set of assignments ;
+; start_address[9]  ; Incomplete set of assignments ;
+; start_address[10] ; Incomplete set of assignments ;
+; start_address[11] ; Incomplete set of assignments ;
+; start_address[12] ; Incomplete set of assignments ;
+; start_address[13] ; Incomplete set of assignments ;
+; start_address[14] ; Incomplete set of assignments ;
+; start_address[15] ; Incomplete set of assignments ;
 ; clk               ; Missing location assignment   ;
 ; start             ; Missing location assignment   ;
-; start_address[15] ; Missing location assignment   ;
-; start_address[14] ; Missing location assignment   ;
-; start_address[13] ; Missing location assignment   ;
-; start_address[12] ; Missing location assignment   ;
-; start_address[11] ; Missing location assignment   ;
-; start_address[10] ; Missing location assignment   ;
-; start_address[9]  ; Missing location assignment   ;
-; start_address[8]  ; Missing location assignment   ;
-; start_address[7]  ; Missing location assignment   ;
-; start_address[6]  ; Missing location assignment   ;
-; start_address[5]  ; Missing location assignment   ;
-; start_address[4]  ; Missing location assignment   ;
-; start_address[3]  ; Missing location assignment   ;
-; start_address[2]  ; Missing location assignment   ;
-; start_address[1]  ; Missing location assignment   ;
 ; start_address[0]  ; Missing location assignment   ;
+; start_address[1]  ; Missing location assignment   ;
+; start_address[2]  ; Missing location assignment   ;
+; start_address[3]  ; Missing location assignment   ;
+; start_address[4]  ; Missing location assignment   ;
+; start_address[5]  ; Missing location assignment   ;
+; start_address[6]  ; Missing location assignment   ;
+; start_address[7]  ; Missing location assignment   ;
+; start_address[8]  ; Missing location assignment   ;
+; start_address[9]  ; Missing location assignment   ;
+; start_address[10] ; Missing location assignment   ;
+; start_address[11] ; Missing location assignment   ;
+; start_address[12] ; Missing location assignment   ;
+; start_address[13] ; Missing location assignment   ;
+; start_address[14] ; Missing location assignment   ;
+; start_address[15] ; Missing location assignment   ;
 +-------------------+-------------------------------+
 
 
@@ -367,45 +367,45 @@ The pin-out file can be found in C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-comp
 +-------------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+
 ; clk               ; M7    ; 4        ; 16           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
 ; start             ; N7    ; 4        ; 16           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
-; start_address[0]  ; M6    ; 3        ; 12           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
-; start_address[10] ; N10   ; 4        ; 26           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
-; start_address[11] ; M9    ; 4        ; 24           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
-; start_address[12] ; L9    ; 4        ; 24           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
-; start_address[13] ; K9    ; 4        ; 22           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
-; start_address[14] ; N9    ; 4        ; 20           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
-; start_address[15] ; N8    ; 4        ; 20           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
-; start_address[1]  ; N4    ; 3        ; 10           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
-; start_address[2]  ; M4    ; 3        ; 8            ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
-; start_address[3]  ; L4    ; 3        ; 8            ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
-; start_address[4]  ; K8    ; 4        ; 22           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
-; start_address[5]  ; L11   ; 4        ; 31           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
-; start_address[6]  ; K10   ; 4        ; 31           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
-; start_address[7]  ; N12   ; 4        ; 29           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
-; start_address[8]  ; M11   ; 4        ; 29           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
-; start_address[9]  ; N11   ; 4        ; 26           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
+; start_address[0]  ; N8    ; 4        ; 20           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
+; start_address[10] ; L11   ; 4        ; 31           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
+; start_address[11] ; K8    ; 4        ; 22           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
+; start_address[12] ; L4    ; 3        ; 8            ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
+; start_address[13] ; M4    ; 3        ; 8            ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
+; start_address[14] ; N4    ; 3        ; 10           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
+; start_address[15] ; M6    ; 3        ; 12           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
+; start_address[1]  ; N9    ; 4        ; 20           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
+; start_address[2]  ; K9    ; 4        ; 22           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
+; start_address[3]  ; L9    ; 4        ; 24           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
+; start_address[4]  ; M9    ; 4        ; 24           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
+; start_address[5]  ; N10   ; 4        ; 26           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
+; start_address[6]  ; N11   ; 4        ; 26           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
+; start_address[7]  ; M11   ; 4        ; 29           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
+; start_address[8]  ; N12   ; 4        ; 29           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
+; start_address[9]  ; K10   ; 4        ; 31           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
 +-------------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+
 
 
-+------------------------------------------------------------------------------------------------------------+
-; Dual Purpose and Dedicated Pins                                                                            ;
-+----------+-----------------------+--------------------------+------------------+---------------------------+
-; Location ; Pin Name              ; Reserved As              ; User Signal Name ; Pin Type                  ;
-+----------+-----------------------+--------------------------+------------------+---------------------------+
-; L3       ; MSEL2                 ; -                        ; -                ; Dedicated Programming Pin ;
-; N3       ; MSEL1                 ; -                        ; -                ; Dedicated Programming Pin ;
-; K5       ; MSEL0                 ; -                        ; -                ; Dedicated Programming Pin ;
-; J5       ; CONF_DONE             ; -                        ; -                ; Dedicated Programming Pin ;
-; K6       ; nSTATUS               ; -                        ; -                ; Dedicated Programming Pin ;
-; N4       ; DIFFIO_B1p, CRC_ERROR ; Use as regular IO        ; start_address[1] ; Dual Purpose Pin          ;
-; N5       ; DIFFIO_B1n, NCEO      ; Use as programming pin   ; ~ALTERA_NCEO~    ; Dual Purpose Pin          ;
-; M6       ; DIFFIO_B2p, INIT_DONE ; Use as regular IO        ; start_address[0] ; Dual Purpose Pin          ;
-; A5       ; DATA0                 ; As input tri-stated      ; ~ALTERA_DATA0~   ; Dual Purpose Pin          ;
-; B5       ; ASDO                  ; As input tri-stated      ; ~ALTERA_ASDO~    ; Dual Purpose Pin          ;
-; C5       ; NCSO                  ; As input tri-stated      ; ~ALTERA_NCSO~    ; Dual Purpose Pin          ;
-; A4       ; DCLK                  ; As output driving ground ; ~ALTERA_DCLK~    ; Dual Purpose Pin          ;
-; D5       ; nCONFIG               ; -                        ; -                ; Dedicated Programming Pin ;
-; C4       ; nCE                   ; -                        ; -                ; Dedicated Programming Pin ;
-+----------+-----------------------+--------------------------+------------------+---------------------------+
++-------------------------------------------------------------------------------------------------------------+
+; Dual Purpose and Dedicated Pins                                                                             ;
++----------+-----------------------+--------------------------+-------------------+---------------------------+
+; Location ; Pin Name              ; Reserved As              ; User Signal Name  ; Pin Type                  ;
++----------+-----------------------+--------------------------+-------------------+---------------------------+
+; L3       ; MSEL2                 ; -                        ; -                 ; Dedicated Programming Pin ;
+; N3       ; MSEL1                 ; -                        ; -                 ; Dedicated Programming Pin ;
+; K5       ; MSEL0                 ; -                        ; -                 ; Dedicated Programming Pin ;
+; J5       ; CONF_DONE             ; -                        ; -                 ; Dedicated Programming Pin ;
+; K6       ; nSTATUS               ; -                        ; -                 ; Dedicated Programming Pin ;
+; N4       ; DIFFIO_B1p, CRC_ERROR ; Use as regular IO        ; start_address[14] ; Dual Purpose Pin          ;
+; N5       ; DIFFIO_B1n, NCEO      ; Use as programming pin   ; ~ALTERA_NCEO~     ; Dual Purpose Pin          ;
+; M6       ; DIFFIO_B2p, INIT_DONE ; Use as regular IO        ; start_address[15] ; Dual Purpose Pin          ;
+; A5       ; DATA0                 ; As input tri-stated      ; ~ALTERA_DATA0~    ; Dual Purpose Pin          ;
+; B5       ; ASDO                  ; As input tri-stated      ; ~ALTERA_ASDO~     ; Dual Purpose Pin          ;
+; C5       ; NCSO                  ; As input tri-stated      ; ~ALTERA_NCSO~     ; Dual Purpose Pin          ;
+; A4       ; DCLK                  ; As output driving ground ; ~ALTERA_DCLK~     ; Dual Purpose Pin          ;
+; D5       ; nCONFIG               ; -                        ; -                 ; Dedicated Programming Pin ;
+; C4       ; nCE                   ; -                        ; -                 ; Dedicated Programming Pin ;
++----------+-----------------------+--------------------------+-------------------+---------------------------+
 
 
 +--------------------------------------------------------------------------------+
@@ -555,50 +555,50 @@ The pin-out file can be found in C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-comp
 ; K5       ; 18         ; 3        ; ^MSEL0                                           ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; K6       ; 20         ; 3        ; ^nSTATUS                                         ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; K7       ;            ; 3A       ; VCC_CLKIN3A                                      ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; K8       ; 35         ; 4        ; start_address[4]                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; K9       ; 36         ; 4        ; start_address[13]                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; K10      ; 43         ; 4        ; start_address[6]                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; K8       ; 35         ; 4        ; start_address[11]                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; K9       ; 36         ; 4        ; start_address[2]                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; K10      ; 43         ; 4        ; start_address[9]                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; K11      ; 48         ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                  ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; K12      ; 47         ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                  ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; K13      ; 54         ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                  ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L1       ;            ;          ; RREF                                             ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; L2       ;            ;          ; GND                                              ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; L3       ; 16         ; 3        ; ^MSEL2                                           ;        ;              ;         ; --         ;                 ; --       ; --           ;
-; L4       ; 21         ; 3        ; start_address[3]                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; L4       ; 21         ; 3        ; start_address[12]                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; L5       ; 27         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                  ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; L6       ;            ; 3        ; VCCIO3                                           ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; L7       ; 28         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                  ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; L8       ;            ; 4        ; VCCIO4                                           ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; L9       ; 37         ; 4        ; start_address[12]                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; L9       ; 37         ; 4        ; start_address[3]                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; L10      ;            ; 4        ; VCCIO4                                           ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; L11      ; 44         ; 4        ; start_address[5]                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; L11      ; 44         ; 4        ; start_address[10]                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; L12      ; 50         ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                  ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L13      ; 49         ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                  ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; M1       ;            ;          ; GND                                              ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; M2       ;            ; --       ; VCCA_GXB                                         ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; M3       ;            ;          ; NC                                               ;        ;              ;         ; --         ;                 ; --       ; --           ;
-; M4       ; 22         ; 3        ; start_address[2]                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; M4       ; 22         ; 3        ; start_address[13]                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; M5       ;            ;          ; GND                                              ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; M6       ; 25         ; 3        ; start_address[0]                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; M6       ; 25         ; 3        ; start_address[15]                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; M7       ; 31         ; 4        ; clk                                              ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; M8       ;            ;          ; GND                                              ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; M9       ; 38         ; 4        ; start_address[11]                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; M9       ; 38         ; 4        ; start_address[4]                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; M10      ;            ;          ; GND                                              ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; M11      ; 41         ; 4        ; start_address[8]                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; M11      ; 41         ; 4        ; start_address[7]                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; M12      ;            ;          ; GND                                              ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; M13      ; 46         ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                  ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; N1       ;            ; --       ; VCCL_GXB                                         ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; N2       ;            ;          ; NC                                               ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; N3       ; 17         ; 3        ; ^MSEL1                                           ;        ;              ;         ; --         ;                 ; --       ; --           ;
-; N4       ; 23         ; 3        ; start_address[1]                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; N4       ; 23         ; 3        ; start_address[14]                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; N5       ; 24         ; 3        ; ~ALTERA_NCEO~ / RESERVED_OUTPUT_OPEN_DRAIN       ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; N6       ; 26         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                  ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; N7       ; 32         ; 4        ; start                                            ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; N8       ; 33         ; 4        ; start_address[15]                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; N9       ; 34         ; 4        ; start_address[14]                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; N10      ; 39         ; 4        ; start_address[10]                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; N11      ; 40         ; 4        ; start_address[9]                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; N12      ; 42         ; 4        ; start_address[7]                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; N8       ; 33         ; 4        ; start_address[0]                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; N9       ; 34         ; 4        ; start_address[1]                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; N10      ; 39         ; 4        ; start_address[5]                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; N11      ; 40         ; 4        ; start_address[6]                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; N12      ; 42         ; 4        ; start_address[8]                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; N13      ; 45         ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                  ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 +----------+------------+----------+--------------------------------------------------+--------+--------------+---------+------------+-----------------+----------+--------------+
 Note: Pin directions (input, output or bidir) are based on device operating in user mode.
@@ -621,22 +621,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------+----------+---------------+---------------+-----------------------+-----+------+
 ; clk               ; Input    ; --            ; --            ; --                    ; --  ; --   ;
 ; start             ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; start_address[15] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; start_address[14] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; start_address[13] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; start_address[12] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; start_address[11] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; start_address[10] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; start_address[9]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; start_address[8]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; start_address[7]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; start_address[6]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; start_address[5]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; start_address[4]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; start_address[3]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; start_address[2]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; start_address[1]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
 ; start_address[0]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; start_address[1]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; start_address[2]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; start_address[3]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; start_address[4]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; start_address[5]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; start_address[6]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; start_address[7]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; start_address[8]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; start_address[9]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; start_address[10] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; start_address[11] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; start_address[12] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; start_address[13] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; start_address[14] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; start_address[15] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
 +-------------------+----------+---------------+---------------+-----------------------+-----+------+
 
 
@@ -647,22 +647,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------+-------------------+---------+
 ; clk                 ;                   ;         ;
 ; start               ;                   ;         ;
-; start_address[15]   ;                   ;         ;
-; start_address[14]   ;                   ;         ;
-; start_address[13]   ;                   ;         ;
-; start_address[12]   ;                   ;         ;
-; start_address[11]   ;                   ;         ;
-; start_address[10]   ;                   ;         ;
-; start_address[9]    ;                   ;         ;
-; start_address[8]    ;                   ;         ;
-; start_address[7]    ;                   ;         ;
-; start_address[6]    ;                   ;         ;
-; start_address[5]    ;                   ;         ;
-; start_address[4]    ;                   ;         ;
-; start_address[3]    ;                   ;         ;
-; start_address[2]    ;                   ;         ;
-; start_address[1]    ;                   ;         ;
 ; start_address[0]    ;                   ;         ;
+; start_address[1]    ;                   ;         ;
+; start_address[2]    ;                   ;         ;
+; start_address[3]    ;                   ;         ;
+; start_address[4]    ;                   ;         ;
+; start_address[5]    ;                   ;         ;
+; start_address[6]    ;                   ;         ;
+; start_address[7]    ;                   ;         ;
+; start_address[8]    ;                   ;         ;
+; start_address[9]    ;                   ;         ;
+; start_address[10]   ;                   ;         ;
+; start_address[11]   ;                   ;         ;
+; start_address[12]   ;                   ;         ;
+; start_address[13]   ;                   ;         ;
+; start_address[14]   ;                   ;         ;
+; start_address[15]   ;                   ;         ;
 +---------------------+-------------------+---------+
 
 
@@ -749,22 +749,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Total Fail         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
 ; clk                ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; start              ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; start_address[15]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; start_address[14]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; start_address[13]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; start_address[12]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; start_address[11]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; start_address[10]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; start_address[9]   ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; start_address[8]   ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; start_address[7]   ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; start_address[6]   ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; start_address[5]   ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; start_address[4]   ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; start_address[3]   ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; start_address[2]   ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; start_address[1]   ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; start_address[0]   ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; start_address[1]   ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; start_address[2]   ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; start_address[3]   ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; start_address[4]   ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; start_address[5]   ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; start_address[6]   ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; start_address[7]   ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; start_address[8]   ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; start_address[9]   ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; start_address[10]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; start_address[11]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; start_address[12]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; start_address[13]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; start_address[14]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; start_address[15]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 
 
@@ -871,10 +871,10 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info (144001): Generated suppressed messages file C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/Lab2.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 919 megabytes
-    Info: Processing ended: Thu Mar 12 22:17:08 2015
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Peak virtual memory: 918 megabytes
+    Info: Processing ended: Fri Mar 13 00:17:18 2015
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 
 +----------------------------+

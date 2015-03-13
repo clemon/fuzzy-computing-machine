@@ -7,13 +7,15 @@ module MEM_WB(
 		input [2:0] reg1_i, reg2_i,
 		input [3:0] opcode_i,
 		input [2:0] imm_i,
-		output wire [7:0] data1_o,
-		output wire [7:0] alu_reg_o,
-		output wire writeReg_o,
-		output wire [7:0] q_o,
-		output wire [2:0] reg1_o, reg2_o,
-		output wire [3:0] opcode_o,
-		output wire [2:0] imm_o
+		input [2:0] regD_i,
+		output reg [7:0] data1_o,
+		output reg [7:0] alu_reg_o,
+		output reg writeReg_o,
+		output reg [7:0] q_o,
+		output reg [2:0] reg1_o, reg2_o,
+		output reg [3:0] opcode_o,
+		output reg [2:0] imm_o,
+		output reg [2:0] regD_o
 	);
 
 always_ff @ (posedge clk)
@@ -26,6 +28,7 @@ begin
 	reg2_o     <= reg2_i;
 	opcode_o   <= opcode_i;
 	imm_o  	   <= imm_i;
+	regD_o <= regD_i;
 end
 
 endmodule
