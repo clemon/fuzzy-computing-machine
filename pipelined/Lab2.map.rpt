@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab2
-Fri Mar 13 00:17:12 2015
+Fri Mar 13 08:02:36 2015
 Quartus II 64-Bit Version 14.1.0 Build 186 12/03/2014 SJ Web Edition
 
 
@@ -15,13 +15,16 @@ Quartus II 64-Bit Version 14.1.0 Build 186 12/03/2014 SJ Web Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
   9. Parameter Settings for User Entity Instance: datamem:b2v_inst12
- 10. Port Connectivity Checks: "regfile:b2v_inst8"
- 11. Port Connectivity Checks: "MEM_WB:b2v_inst19"
- 12. Port Connectivity Checks: "EX_MEM:b2v_inst18"
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
- 16. Analysis & Synthesis Suppressed Messages
+ 10. Port Connectivity Checks: "regfile:b2v_inst90"
+ 11. Port Connectivity Checks: "ID_EX:b2v_inst5"
+ 12. Port Connectivity Checks: "IF_ID:b2v_inst3"
+ 13. Port Connectivity Checks: "MEM_WB:b2v_inst19"
+ 14. Port Connectivity Checks: "EX_MEM:b2v_inst18"
+ 15. Port Connectivity Checks: "mux_reg:b2v_inst15"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+ 19. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -48,7 +51,7 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Mar 13 00:17:12 2015      ;
+; Analysis & Synthesis Status        ; Successful - Fri Mar 13 08:02:36 2015      ;
 ; Quartus II 64-Bit Version          ; 14.1.0 Build 186 12/03/2014 SJ Web Edition ;
 ; Revision Name                      ; Lab2                                       ;
 ; Top-level Entity Name              ; Lab2                                       ;
@@ -166,25 +169,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                  ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                        ; Library ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------+---------+
-; control.sv                       ; yes             ; User SystemVerilog HDL File        ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/control.sv   ;         ;
-; mux15.sv                         ; yes             ; User SystemVerilog HDL File        ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/mux15.sv     ;         ;
-; ID_EX.sv                         ; yes             ; User SystemVerilog HDL File        ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/ID_EX.sv     ;         ;
-; EX_MEM.sv                        ; yes             ; User SystemVerilog HDL File        ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/EX_MEM.sv    ;         ;
-; lab2.v                           ; yes             ; Auto-Found Verilog HDL File        ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/lab2.v       ;         ;
-; fetch.sv                         ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/fetch.sv     ;         ;
-; datamem.v                        ; yes             ; Auto-Found Verilog HDL File        ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/datamem.v    ;         ;
-; mux_reg.sv                       ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/mux_reg.sv   ;         ;
-; mem_wb.sv                        ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/mem_wb.sv    ;         ;
-; instr_rom.sv                     ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/instr_rom.sv ;         ;
-; if_id.sv                         ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/if_id.sv     ;         ;
-; alu.sv                           ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/alu.sv       ;         ;
-; regfile.sv                       ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/regfile.sv   ;         ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                        ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                              ; Library ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------+---------+
+; control.sv                       ; yes             ; User SystemVerilog HDL File        ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/control.sv         ;         ;
+; mux15.sv                         ; yes             ; User SystemVerilog HDL File        ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/mux15.sv           ;         ;
+; ID_EX.sv                         ; yes             ; User SystemVerilog HDL File        ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/ID_EX.sv           ;         ;
+; EX_MEM.sv                        ; yes             ; User SystemVerilog HDL File        ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/EX_MEM.sv          ;         ;
+; forward_control.sv               ; yes             ; User SystemVerilog HDL File        ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/forward_control.sv ;         ;
+; mux7.sv                          ; yes             ; User SystemVerilog HDL File        ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/mux7.sv            ;         ;
+; mux3.sv                          ; yes             ; User SystemVerilog HDL File        ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/mux3.sv            ;         ;
+; lab2.v                           ; yes             ; Auto-Found Verilog HDL File        ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/lab2.v             ;         ;
+; fetch.sv                         ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/fetch.sv           ;         ;
+; datamem.v                        ; yes             ; Auto-Found Verilog HDL File        ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/datamem.v          ;         ;
+; mux_reg.sv                       ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/mux_reg.sv         ;         ;
+; mem_wb.sv                        ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/mem_wb.sv          ;         ;
+; instr_rom.sv                     ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/instr_rom.sv       ;         ;
+; if_id.sv                         ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/if_id.sv           ;         ;
+; alu.sv                           ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/alu.sv             ;         ;
+; regfile.sv                       ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/regfile.sv         ;         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------+
@@ -238,21 +244,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "regfile:b2v_inst8"                                                                                                                                 ;
-+------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                                                                                      ;
-+------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; writeReg_i ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; r0         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; r1         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; r2         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; r3         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; r4         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; r5         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; r6         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; r7         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-+------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "regfile:b2v_inst90"                                                                                      ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; r0   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; r1   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; r2   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; r3   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; r4   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; r5   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; r6   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; r7   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ID_EX:b2v_inst5"                                                                                                                                     ;
++---------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port          ; Type  ; Severity ; Details                                                                                                                                      ;
++---------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; branchTaken_i ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++---------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "IF_ID:b2v_inst3"                                                                                                                                     ;
++---------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port          ; Type  ; Severity ; Details                                                                                                                                      ;
++---------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; branchTaken_i ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++---------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------+
@@ -272,6 +295,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+--------+----------+----------------------------------------------------------------------------------------------------------+
 ; data2_o ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
 +---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux_reg:b2v_inst15"                                                                                        ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                  ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; muxout ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -301,7 +333,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 14.1.0 Build 186 12/03/2014 SJ Web Edition
-    Info: Processing started: Fri Mar 13 00:17:03 2015
+    Info: Processing started: Fri Mar 13 08:02:25 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab2 -c Lab2
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file control.sv
@@ -312,9 +344,16 @@ Info (12021): Found 1 design units, including 1 entities, in source file id_ex.s
     Info (12023): Found entity 1: ID_EX
 Info (12021): Found 1 design units, including 1 entities, in source file ex_mem.sv
     Info (12023): Found entity 1: EX_MEM
-Warning (12125): Using design file lab2.v, which is not specified as a design file for the current project, but contains definitions for 2 design units and 2 entities in project
+Info (12021): Found 1 design units, including 1 entities, in source file forward_control.sv
+    Info (12023): Found entity 1: forward_control
+Info (12021): Found 1 design units, including 1 entities, in source file mux7.sv
+    Info (12023): Found entity 1: mux7
+Info (12021): Found 1 design units, including 1 entities, in source file mux3.sv
+    Info (12023): Found entity 1: mux3
+Warning (12125): Using design file lab2.v, which is not specified as a design file for the current project, but contains definitions for 3 design units and 3 entities in project
     Info (12023): Found entity 1: Lab2
     Info (12023): Found entity 2: mux_0
+    Info (12023): Found entity 3: mux_1
 Warning (12300): Found the following files while searching for definition of entity "Lab2", but did not use these files because already using a different file containing the entity definition
     Warning (12126): File: Lab2.bdf
 Info (12127): Elaborating entity "Lab2" for the top level hierarchy
@@ -324,14 +363,20 @@ Info (12128): Elaborating entity "fetch" for hierarchy "fetch:b2v_inst"
 Warning (10230): Verilog HDL assignment warning at fetch.sv(15): truncated value with size 32 to match size of target (8)
 Warning (10230): Verilog HDL assignment warning at fetch.sv(17): truncated value with size 16 to match size of target (8)
 Warning (10230): Verilog HDL assignment warning at fetch.sv(19): truncated value with size 16 to match size of target (8)
+Info (12128): Elaborating entity "mux7" for hierarchy "mux7:b2v_inst1"
+Warning (10958): SystemVerilog warning at mux7.sv(38): unique or priority keyword makes case statement complete
+Warning (10958): SystemVerilog warning at mux7.sv(50): unique or priority keyword makes case statement complete
+Warning (10958): SystemVerilog warning at mux7.sv(62): unique or priority keyword makes case statement complete
 Info (12128): Elaborating entity "mux_0" for hierarchy "mux_0:b2v_inst11"
-Warning (10034): Output port "muxout" at lab2.v(312) has no driver
+Warning (10034): Output port "muxout" at lab2.v(367) has no driver
 Warning (12125): Using design file datamem.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: datamem
 Info (12128): Elaborating entity "datamem" for hierarchy "datamem:b2v_inst12"
 Warning (12125): Using design file mux_reg.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: mux_reg
 Info (12128): Elaborating entity "mux_reg" for hierarchy "mux_reg:b2v_inst15"
+Info (12128): Elaborating entity "mux3" for hierarchy "mux3:b2v_inst16"
+Warning (10958): SystemVerilog warning at mux3.sv(11): unique or priority keyword makes case statement complete
 Info (12128): Elaborating entity "EX_MEM" for hierarchy "EX_MEM:b2v_inst18"
 Warning (12125): Using design file mem_wb.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: MEM_WB
@@ -340,10 +385,21 @@ Warning (12125): Using design file instr_rom.sv, which is not specified as a des
     Info (12023): Found entity 1: instr_rom
 Info (12128): Elaborating entity "instr_rom" for hierarchy "instr_rom:b2v_inst2"
 Warning (10270): Verilog HDL Case Statement warning at instr_rom.sv(58): incomplete case statement has no default case item
-Warning (10230): Verilog HDL assignment warning at instr_rom.sv(301): truncated value with size 32 to match size of target (3)
+Warning (10199): Verilog HDL Case Statement warning at instr_rom.sv(362): case item expression never matches the case expression
+Warning (10199): Verilog HDL Case Statement warning at instr_rom.sv(363): case item expression never matches the case expression
+Warning (10199): Verilog HDL Case Statement warning at instr_rom.sv(366): case item expression never matches the case expression
+Warning (10199): Verilog HDL Case Statement warning at instr_rom.sv(367): case item expression never matches the case expression
+Warning (10199): Verilog HDL Case Statement warning at instr_rom.sv(370): case item expression never matches the case expression
+Warning (10199): Verilog HDL Case Statement warning at instr_rom.sv(371): case item expression never matches the case expression
+Warning (10199): Verilog HDL Case Statement warning at instr_rom.sv(374): case item expression never matches the case expression
+Warning (10199): Verilog HDL Case Statement warning at instr_rom.sv(375): case item expression never matches the case expression
+Warning (10230): Verilog HDL assignment warning at instr_rom.sv(393): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at instr_rom.sv(405): truncated value with size 32 to match size of target (3)
+Info (10264): Verilog HDL Case Statement information at instr_rom.sv(387): all case item expressions in this case statement are onehot
 Warning (10030): Net "jmpLabels.data_a" at instr_rom.sv(41) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "jmpLabels.waddr_a" at instr_rom.sv(41) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "jmpLabels.we_a" at instr_rom.sv(41) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "forward_control" for hierarchy "forward_control:b2v_inst27"
 Warning (12125): Using design file if_id.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: IF_ID
 Info (12128): Elaborating entity "IF_ID" for hierarchy "IF_ID:b2v_inst3"
@@ -359,14 +415,16 @@ Warning (10230): Verilog HDL assignment warning at alu.sv(52): truncated value w
 Warning (10230): Verilog HDL assignment warning at alu.sv(53): truncated value with size 32 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at alu.sv(54): truncated value with size 32 to match size of target (1)
 Warning (10958): SystemVerilog warning at alu.sv(34): unique or priority keyword makes case statement complete
-Warning (12125): Using design file regfile.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: regfile
-Info (12128): Elaborating entity "regfile" for hierarchy "regfile:b2v_inst8"
+Info (12128): Elaborating entity "mux_1" for hierarchy "mux_1:b2v_inst8"
+Warning (10034): Output port "muxout" at lab2.v(377) has no driver
 Info (12128): Elaborating entity "mux15" for hierarchy "mux15:b2v_inst9"
 Warning (10030): Net "jmpLabels.data_a" at mux15.sv(8) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "jmpLabels.waddr_a" at mux15.sv(8) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "jmpLabels.we_a" at mux15.sv(8) has no driver or initial value, using a default initial value '0'
-Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12125): Using design file regfile.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: regfile
+Info (12128): Elaborating entity "regfile" for hierarchy "regfile:b2v_inst90"
+Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (144001): Generated suppressed messages file C:/Users/Mat/Documents/CSE 141L/Lab2/fuzzy-computing-machine/pipelined/Lab2.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -392,11 +450,11 @@ Warning (21074): Design contains 18 input pin(s) that do not drive logic
 Info (21057): Implemented 18 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 18 input pins
     Info (21059): Implemented 0 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 51 warnings
-    Info: Peak virtual memory: 659 megabytes
-    Info: Processing ended: Fri Mar 13 00:17:12 2015
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:24
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 65 warnings
+    Info: Peak virtual memory: 665 megabytes
+    Info: Processing ended: Fri Mar 13 08:02:36 2015
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:26
 
 
 +------------------------------------------+

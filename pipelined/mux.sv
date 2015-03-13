@@ -1,4 +1,4 @@
-module mux(
+module lilmux(
 	input [7:0] input1,
 	input [7:0] input2,
 	input sel,

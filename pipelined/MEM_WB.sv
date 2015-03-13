@@ -8,6 +8,7 @@ module MEM_WB(
 		input [3:0] opcode_i,
 		input [2:0] imm_i,
 		input [2:0] regD_i,
+		input [7:0] meDat_i,
 		output reg [7:0] data1_o,
 		output reg [7:0] alu_reg_o,
 		output reg writeReg_o,
@@ -15,7 +16,8 @@ module MEM_WB(
 		output reg [2:0] reg1_o, reg2_o,
 		output reg [3:0] opcode_o,
 		output reg [2:0] imm_o,
-		output reg [2:0] regD_o
+		output reg [2:0] regD_o,
+		output reg [7:0] meDat_o
 	);
 
 always_ff @ (posedge clk)
@@ -29,6 +31,7 @@ begin
 	opcode_o   <= opcode_i;
 	imm_o  	   <= imm_i;
 	regD_o <= regD_i;
+	meDat_o <= meDat_i;
 end
 
 endmodule
