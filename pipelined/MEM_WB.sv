@@ -18,14 +18,14 @@ module MEM_WB(
 
 always_ff @ (posedge clk)
 begin
-	data1_i    <= data1_i;
-	alu_reg_i  <= alu_reg_i;
-	writeReg_i <= writeReg_i;
-	q_i        <= q_i;
-	reg1_i     <= reg1_i;
-	reg2_i     <= reg2_i;
-	opcode_i   <= opcode_i;
-	imm_i  	   <= imm_i;
+	data1_o    <= data1_i;
+	alu_reg_o  <= alu_reg_i;
+	writeReg_o <= writeReg_i;
+	q_o        <= q_i;
+	reg1_o     <= reg1_i;
+	reg2_o     <= reg2_i;
+	opcode_o   <= opcode_i;
+	imm_o  	   <= imm_i;
 end
 
 endmodule
