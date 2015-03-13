@@ -57,10 +57,9 @@ product c x total:
 	mvb $i2, $o2    # Move o2 (sum) back to i2 - just in case from high bit loop
     add $i1, $o2    # Add C and sum
 
-    lim 4, 0        # Put 4 in to shift
-    lim 1, 1        # Put 1 to shift with
-    sft $i2, 0      # 4 << 1 = 8
-    inc $i2, 0      # 8+1 = 9 for jmp loc 9
+    lim 3, 0        # Put 3 in to shift
+    lim 2, 1        # Put 2 to shift with
+    sft $i2, 0      # 3 << 2 = 12
     mvf $i2, $o1    # Put into jmp loc
  
     lim 0, 1        # Put 0 back for comparison
