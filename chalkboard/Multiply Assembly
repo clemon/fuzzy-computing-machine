@@ -1,0 +1,114 @@
+# A * B
+lim 0, 0        # 0 for comparison in $i2
+mvf $i2, $o3    # Zero out overflow reg
+ 
+mvf $i2, $o1    # Put 0 here for branch instr num
+ 
+lim 2, 0        # Load B address
+lb $i2, $o0     # Load B
+mvb $i1, $o0    # Move to $i1
+ 
+lim 1, 0        # Load A address
+lb $i2, $o0     # Load A to $o0
+ 
+lim 0, 0        # Load 0 for sum to $i2
+ 
+lim 0, 1        # Load 0 to $i3 
+ 
+product:
+    add $i1, $o2    # Add B and sum
+    mvb $i2, $o2    # Move sum back to i's
+ 
+    inc $o0, 1      # Decrement A
+ 
+    bne $i3, $o1    # If 0 != A -> product
+ 
+# C*(AB)
+inc $o1, 0      # 0->1 branch instr num
+ 
+mvf $i0, $o3 	# Put partial high bits in their spot
+
+lim 3, 1        # Load C address
+lb $i3, $o0     # Load C
+
+#
+mvb $i1, $o0	# Move C for add
+#
+ 
+mvb $i3, $o2    # Move total back for add
+
+#
+mvf $i3, $o0
+#
+
+lim 0, 0        # Reset temp sum to 0
+lim 0, 1        # Load 0 to $i3
+mvf $i3, $o2    # Zero out o2 just in case
+mvb $i0, $o2	# Zero out overflow counter
+ 
+product c x total:
+    mvb $i2, $o2    # Move o2 (sum) back to i2 - just in case from high bit loop
+    add $i1, $o2    # Add C and sum
+ 
+    inc $o0, 1      # Decrement total
+ 
+    bne $i3, $o1    # If 0 != total -> product
+ 
+	mvb $i2, $o2    # Move o2 (sum) back to i2 - just in case from high bit loop
+    add $i1, $o2    # Add C and sum
+
+    lim 4, 0        # Put 4 in to shift
+    lim 1, 1        # Put 1 to shift with
+    sft $i2, 0      # 4 << 1 = 8
+    inc $i2, 0      # 8+1 = 9 for jmp loc 9
+    mvf $i2, $o1    # Put into jmp loc
+ 
+    lim 0, 1        # Put 0 back for comparison
+
+    mvb $i2, $o3    # Move high bits back for cmp
+    beq $i2, $o1    # If high == 0, continue to lim 5, 1
+ 
+                    # High != 0 
+    inc $i2, 1      # Decremenet high bits
+    mvf $i2, $o3    # Put updated high bits back
+ 
+    lim 1, 0        # Load 1 for num to shift
+    lim 1, 1        # Load 1 for how much to shift
+    sft $i2, 0      # Shift left one - 2
+    inc $i2, 0      # Add one - 3
+    sft $i2, 0      # Shift left one - 6
+    inc $i2, 0      # Add one - 7
+    sft $i2, 0      # Shift left one - 14
+    inc $i2, 0      # Add one - 15
+    sft $i2, 0      # Shift left one - 30
+    inc $i2, 0      # Add one - 31
+    sft $i2, 0      # Shift left one - 62
+    inc $i2, 0      # Add one - 63
+    sft $i2, 0      # Shift left one - 126
+    inc $i2, 0      # Add one - 127
+    sft $i2, 0      # Shift left one - 254
+    inc $i2, 0      # Add one - 255
+ 
+    mvf $i2, $o0    # Change total to 255
+ 
+    lim 1, 0        # Load loc 1 for jmp back
+    mvf $i2, $o1    # Put jmp addr into jmp loc
+ 
+    lim 0, 0        # Put 0 for fake jmp cmp
+    lim 0, 1        # Put 0 back for comparison
+ 
+    beq, $i2, $o1   # Loop back to prod loop
+#
+mvf $i1, $o3
+mvb $i1, $o2    # Move o2 (sum) back to i2 - just in case from high bit loop
+mvb $i2, $03
+sub $i1, $o2    # Add C and sum
+mvb $i2, $o2
+
+lim 5, 1        # Load low address
+mvf $i3, $o1    # Move address to $o1
+str $i2, $o1    # Store low bits into 5
+ 
+lim 4, 1        # Load high address
+mvf $i3, $o1    # Move address to $o1
+str $i0, $o1    # Store high bits into 4
