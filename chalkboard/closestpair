@@ -1,4 +1,4 @@
-0: instr = 8'b01001010; //lim 5, 0
+			0: instr = 8'b01001010; //lim 5, 0
 			1: instr = 8'b01000101; //lim 2, 1
 			5: instr = 8'b10010100; //sft $i2, 0
 			10: instr = 8'b01101000; //mvf $i2, $o0		//$o0 = 20
@@ -44,3 +44,56 @@
 			149:instr = 8'b11011110; //inc $o3, 0
 			150:instr = 8'b01000001; //lim 0, 1
 			155:instr = 8'b10111011; //beq $i1, $o3 (BUBBLELOOP)
+			
+			156:instr = 8'b01001010; //lim 5, $i2 //BREAKLOOP
+			157:instr = 8'b01000101; //lim 2, $i3
+			162:instr = 8'b10010100; //sft $i2, 0
+			167:instr = 8'b11010101; //inc $i2, 1 (decrement to get 19)
+			172:instr = 8'b01101000; //mvf $i2, $o0
+			173:instr = 8'b01010001; //mvb $i0, $o1
+			174:instr = 8'b01010101; //mvb $i1, $o1
+			178:instr = 8'b11010000; //inc $i0, 0
+											//$i0 = mem address array[index + 1]
+											//$i1 = mem address array[index]
+			183:instr = 8'b00000001; //lb  $i0, $o1
+			184:instr = 8'b00000110; //lb  $i1, $o2
+			188:instr = 8'b01011001; //mvb $i2, $01
+			189:instr = 8'b01011110; //mvb $i3, $o2
+			193:instr = 8'b10001011; //sub $i2, $o3
+			194:instr = 8'b11011001; //inc $o0, 1 (dec)
+			
+			
+			195:instr = 8'b01001010; //lim 5, $i2 //PAIRLOOP
+			196:instr = 8'b01000011; //lim 1, $i3
+			200:instr = 8'b10010100; //sft $i2, 0
+			205:instr = 8'b01101001; //mvf $i2, $o1
+			206:instr = 8'b01000000; //lim 0, $i2
+			207:instr = 8'b01011100; //mvb $i3, $o0
+			212:instr = 8'b10111001; //beq $i2, $o1 (has address for ENDPAIRCHECK)
+			213:instr = 8'b11010000; //inc $i0, 0
+			214:instr = 8'b11010010; //inc $i1, 0
+			215:instr = 8'b11011010; //inc $o1, 0 (now $o1 has address for PAIRLOOP)
+			218:instr = 8'b00000010; //lb  $i0, $o2
+			223:instr = 8'b01011010; //mvb $i2, $o2
+			224:instr = 8'b00000110; //lb  $i1, $o2
+			229:instr = 8'b01011110; //mvb $i3, $o2
+			234:instr = 8'b10001010; //sub $i2, $o2
+			235:instr = 8'b01011011; //mvb $i2, $o3
+			239:instr = 8'b01011110; //mvb $i3, $o2
+			240:instr = 8'b11011001; //inc $o0, 1 (dec)
+			244:instr = 8'b11001001; //blt $i2, $o1 (PAIRLOOP)
+			245:instr = 8'b01101111; //mvf $i3, $o3
+			246:instr = 8'b01000000; //lim 0, 0
+			247:instr = 8'b01000001; //lim 0, 1
+			252:instr = 8'b10111001; //beq $i2, $o1	
+			
+			//WE HAVE ANSWERS
+			
+			253:instr = 8'b01001110; //lim 7, $i2
+			258:instr = 8'b11010100; //inc $i2, 0
+			259:instr = 8'b01001001; //lim 4, $i3
+			264:instr = 8'b10010100; //sft $i2, 0
+			269:instr = 8'b11010101; //inc $i2, 1 (dec)
+			274:instr = 8'b01101001; //mvf $i2, $o1
+			275:instr = 8'b01011111; //mvb $i3, $o3
+			280:instr = 8'b00111101; //str $i3, $o1
