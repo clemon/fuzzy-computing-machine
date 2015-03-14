@@ -1,0 +1,46 @@
+0: instr = 8'b01001010; //lim 5, 0
+			1: instr = 8'b01000101; //lim 2, 1
+			5: instr = 8'b10010100; //sft $i2, 0
+			10: instr = 8'b01101000; //mvf $i2, $o0		//$o0 = 20
+			11: instr = 8'b01001000; //lim 4, 0
+			12: instr = 8'b01001011; //lim 5, 1
+			16: instr = 8'b10010100; //sft $i2, 0 
+			21: instr = 8'b01101001; //mvf $i2, $o1		//$o1 = 128
+			22: instr = 8'b11011001; //LOOP: inc $o0, 1 //$o0 = 19
+			27: instr = 8'b01010100; //mvb $i1, $o0		//$i1 holds sort-check var
+			28:instr = 8'b01000000; //lim 0, 0
+			33:instr = 8'b01101010; //mvf $i2, $o2
+			38:instr = 8'b01010010; //mvb $i0, $o2		//$i0 = 0, used for bubble index
+			39:instr = 8'b01001110; //lim 7, 0    		//BRANCH ADDRESS, BREAKLOOP
+			44:instr = 8'b11010100; //inc $i2, 0
+			49:instr = 8'b11010100; //inc $i2, 0
+			54:instr = 8'b01101010; //mvf $i2, $o2		//move branch address into $o2
+			59:instr = 8'b10110010; //beq $i0, $o2		//if sort loop has run 19 times, terminate
+			60:instr = 8'b01010100; //BUBBLELOOP: mvb $i1, $o0		//$i1 = sortcheck index
+			61:instr = 8'b01001100; //lim 6, 0			//BRANCH ADDRESS, LOOP
+			66:instr = 8'b01101010; //mvf $i2, $o2
+			71:instr = 8'b10110010; //beq $i0, $o2 (LOOP)		//If done with current bubble run, start next iteration
+			72:instr = 8'b01010101; //mvb $i1, $o1		//Set up to load mem loc of first index of bubble
+			77:instr = 8'b01110010; //add $i0, $o2		//$o2 = address of beginning of bubble
+			82:instr = 8'b01010110; //mvb $i1, $o2
+			87:instr = 8'b00000111; //lb  $i1, $o3
+			92:instr = 8'b01010111; //mvb $i1, $o3		//$i1 = array[index beginning of bubble]
+			93:instr = 8'b01000011; //lim 1, 1
+			94:instr = 8'b01011010; //mvb $i2, $o2		//Get address of previous index
+			99:instr = 8'b01111011; //add $i2, $o3		//$o3 = address of end of bubble
+			104:instr = 8'b01011111; //mvb $i3, $o3
+			109:instr = 8'b00001111; //lb  $i3, $o3
+			114:instr = 8'b01011011; //mvb $i2, $o3		//$i2 = array[index end of bubble]
+			115:instr = 8'b01001111; //lim 7, 1			//ADDRESS LABEL FOR NEXT
+			120:instr = 8'b01101111; //mvf $i3, $o3
+			125:instr = 8'b11110111; //bls $i1, $o3 (NEXT)	
+			126:instr = 8'b00111010; //str $i2, $o2
+			131:instr = 8'b11011100; //inc $o2, 0
+			136:instr = 8'b00110110; //str $i1, $o2
+			137:instr = 8'b11010000; //NEXT: inc $i0, 0
+			138:instr = 8'b01000000; //lim 0, 0
+			139:instr = 8'b01001111; //lim 7, 1
+			144:instr = 8'b01101111; //mvf $i3, $o3
+			149:instr = 8'b11011110; //inc $o3, 0
+			150:instr = 8'b01000001; //lim 0, 1
+			155:instr = 8'b10111011; //beq $i1, $o3 (BUBBLELOOP)
